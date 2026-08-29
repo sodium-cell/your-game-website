@@ -1,15 +1,20 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ASTER — Official Website</title>
+    <title>ASTER</title>
+
 
     <style>
+
         /* =========================
-           GENERAL
+           BASIC
         ========================= */
 
         * {
@@ -23,9 +28,12 @@
         }
 
         body {
-            background: #08090d;
-            color: white;
-            font-family: Arial, sans-serif;
+            font-family: Georgia, "Times New Roman", serif;
+
+            background: #F6E7A8;
+
+            color: #7A5A16;
+
             overflow-x: hidden;
         }
 
@@ -35,39 +43,51 @@
         ========================= */
 
         .navbar {
+
             position: fixed;
+
             top: 0;
             left: 0;
 
             width: 100%;
-            height: 70px;
+
+            height: 75px;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
-            gap: 45px;
-
-            background: rgba(8, 9, 13, 0.65);
-            backdrop-filter: blur(10px);
+            gap: 50px;
 
             z-index: 1000;
+
+            background: rgba(246, 231, 168, 0.75);
+
+            backdrop-filter: blur(8px);
         }
 
+
         .navbar a {
-            color: #ffffff;
+
             text-decoration: none;
 
-            font-size: 14px;
-            letter-spacing: 2px;
+            color: #7A5A16;
 
-            opacity: 0.7;
+            font-size: 14px;
+
+            letter-spacing: 2px;
 
             transition: 0.3s ease;
         }
 
+
         .navbar a:hover {
-            opacity: 1;
+
+            color: white;
+
+            transform: translateY(-2px);
         }
 
 
@@ -76,65 +96,42 @@
         ========================= */
 
         section {
+
             min-height: 100vh;
 
+            padding: 100px 8%;
+
+            position: relative;
+
             display: flex;
-            justify-content: center;
+
             align-items: center;
 
-            text-align: center;
-
-            padding: 100px 20px;
+            justify-content: center;
         }
 
 
         /* =========================
-           CONTENT
+           FADE CONTENT
         ========================= */
 
-        .content {
-            max-width: 900px;
+        .fade {
 
             opacity: 0;
 
-            transform: translateY(40px);
+            transform: translateY(35px);
 
             transition:
-                opacity 1.2s ease,
-                transform 1.2s ease;
+                opacity 1.3s ease,
+                transform 1.3s ease;
         }
 
-        .content.show {
+
+        .fade.show {
+
             opacity: 1;
+
             transform: translateY(0);
-        }
-
-        h1 {
-            font-size: clamp(60px, 10vw, 130px);
-
-            letter-spacing: 20px;
-
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            font-size: clamp(40px, 6vw, 75px);
-
-            letter-spacing: 8px;
-
-            margin-bottom: 25px;
-        }
-
-        p {
-            font-size: 18px;
-
-            line-height: 1.8;
-
-            color: #b8b8b8;
-
-            max-width: 700px;
-
-            margin: auto;
         }
 
 
@@ -142,35 +139,127 @@
            WELCOME
         ========================= */
 
-        #welcome {
-            background:
-                radial-gradient(
-                    circle at center,
-                    #202536 0%,
-                    #08090d 65%
-                );
+        .welcome {
+
+            text-align: center;
+
+            flex-direction: column;
         }
 
-        .subtitle {
+
+        .welcome h1 {
+
+            font-size: clamp(70px, 12vw, 150px);
+
+            letter-spacing: 18px;
+
+            font-weight: normal;
+
+            color: #7A5A16;
+        }
+
+
+        .welcome p {
+
+            margin-top: 20px;
+
             font-size: 20px;
 
-            color: #aaa;
+            color: #fffdf0;
 
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+        }
+
+
+        .welcome-image {
+
+            width: 250px;
+
+            margin-top: 35px;
+
+            object-fit: contain;
         }
 
 
         /* =========================
-           ABOUT
+           TWO COLUMN SECTIONS
         ========================= */
 
-        #about {
-            background:
-                radial-gradient(
-                    circle at center,
-                    #181d29 0%,
-                    #08090d 70%
-                );
+        .two-column {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 80px;
+        }
+
+
+        .character {
+
+            width: 45%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-end;
+        }
+
+
+        .character img {
+
+            max-width: 100%;
+
+            max-height: 650px;
+
+            object-fit: contain;
+        }
+
+
+        .text {
+
+            width: 45%;
+        }
+
+
+        .text h2 {
+
+            font-size: clamp(45px, 6vw, 80px);
+
+            font-weight: normal;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .text p {
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+            color: #fffdf0;
+        }
+
+
+        .line {
+
+            width: 80px;
+
+            height: 2px;
+
+            background: #7A5A16;
+
+            margin-bottom: 25px;
         }
 
 
@@ -178,53 +267,15 @@
            GAME
         ========================= */
 
-        #game {
-            background:
-                radial-gradient(
-                    circle at center,
-                    #211b29 0%,
-                    #08090d 70%
-                );
+        .game {
+
+            background: #F3E19A;
         }
 
-        .game-features {
-            margin-top: 40px;
 
-            display: flex;
+        .game .two-column {
 
-            justify-content: center;
-
-            gap: 20px;
-
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            width: 180px;
-
-            padding: 25px 15px;
-
-            border: 1px solid rgba(255,255,255,0.15);
-
-            background: rgba(255,255,255,0.03);
-
-            transition: 0.3s ease;
-        }
-
-        .feature:hover {
-            background: rgba(255,255,255,0.08);
-
-            transform: translateY(-5px);
-        }
-
-        .feature h3 {
-            margin-bottom: 10px;
-
-            letter-spacing: 2px;
-        }
-
-        .feature p {
-            font-size: 13px;
+            flex-direction: row;
         }
 
 
@@ -232,31 +283,45 @@
            RELEASE
         ========================= */
 
-        #release {
-            background:
-                radial-gradient(
-                    circle at center,
-                    #29231a 0%,
-                    #08090d 70%
-                );
+        .release {
+
+            text-align: center;
+
+            flex-direction: column;
         }
 
-        .release-date {
-            font-size: clamp(45px, 8vw, 90px);
 
-            letter-spacing: 10px;
+        .release h2 {
 
-            margin: 30px 0;
+            font-size: clamp(40px, 6vw, 75px);
+
+            font-weight: normal;
+
+            letter-spacing: 6px;
+        }
+
+
+        .year {
+
+            font-size: clamp(80px, 14vw, 170px);
+
+            margin-top: 20px;
+
+            color: #7A5A16;
+
+            letter-spacing: 15px;
+        }
+
+
+        .coming {
+
+            margin-top: 15px;
+
+            font-size: 16px;
+
+            letter-spacing: 4px;
 
             color: white;
-        }
-
-        .coming-soon {
-            color: #999;
-
-            letter-spacing: 5px;
-
-            font-size: 14px;
         }
 
 
@@ -264,31 +329,67 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
 
             .navbar {
+
                 gap: 15px;
+
+                height: 65px;
             }
 
+
             .navbar a {
-                font-size: 10px;
+
+                font-size: 9px;
 
                 letter-spacing: 1px;
             }
 
-            h1 {
-                letter-spacing: 10px;
+
+            .two-column {
+
+                flex-direction: column !important;
+
+                gap: 30px;
+
+                text-align: center;
             }
 
-            h2 {
-                letter-spacing: 4px;
+
+            .character {
+
+                width: 80%;
+
+                order: 1;
             }
 
-            p {
-                font-size: 15px;
+
+            .text {
+
+                width: 90%;
+
+                order: 2;
             }
+
+
+            .line {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .character img {
+
+                max-height: 450px;
+            }
+
         }
+
     </style>
+
 </head>
 
 
@@ -301,13 +402,21 @@
 
     <nav class="navbar">
 
-        <a href="#welcome">WELCOME</a>
+        <a href="#welcome">
+            WELCOME
+        </a>
 
-        <a href="#about">ABOUT US</a>
+        <a href="#about">
+            ABOUT US
+        </a>
 
-        <a href="#game">GAME</a>
+        <a href="#game">
+            GAME
+        </a>
 
-        <a href="#release">RELEASE DAY</a>
+        <a href="#release">
+            RELEASE DAY
+        </a>
 
     </nav>
 
@@ -315,23 +424,23 @@
 
     <!-- =========================
          WELCOME
+         CENTER
     ========================= -->
 
-    <section id="welcome">
+    <section id="welcome" class="welcome">
 
-        <div class="content">
+        <div class="fade">
 
-            <h1>ASTER</h1>
+            <h1>
+                ASTER
+            </h1>
 
-            <div class="subtitle">
-                A world divided by fear.
-            </div>
-
-            <p style="margin-top: 30px;">
-                In a world where humanity and the Awakened
-                struggle to coexist, one lost person may hold
-                the key to peace.
+            <p>
+                A story about memory, identity and peace.
             </p>
+
+            <!-- Replace this with your artwork -->
+            <!-- <img class="welcome-image" src="character1.png"> -->
 
         </div>
 
@@ -341,25 +450,49 @@
 
     <!-- =========================
          ABOUT US
+         CHARACTER LEFT
+         TEXT RIGHT
     ========================= -->
 
     <section id="about">
 
-        <div class="content">
+        <div class="two-column">
 
-            <h2>ABOUT US</h2>
 
-            <p>
-                ASTER is a story-driven RPG project focused on
-                identity, conflict, memory and the possibility
-                of peace between two opposing factions.
+            <div class="character fade">
 
-                <br><br>
+                <img
+                    src="character1.png"
+                    alt="Character"
+                >
 
-                We are creating a world where every character
-                has a story, every choice has meaning,
-                and nothing is quite what it seems.
-            </p>
+            </div>
+
+
+            <div class="text fade">
+
+                <div class="line"></div>
+
+                <h2>
+                    ABOUT US
+                </h2>
+
+                <p>
+
+                    ASTER is a story-driven RPG project
+                    about identity, memories and the
+                    conflict between two opposing sides.
+
+                    <br><br>
+
+                    We want to create a world where
+                    every character has their own story,
+                    and where the line between right
+                    and wrong is never simple.
+
+                </p>
+
+            </div>
 
         </div>
 
@@ -369,71 +502,49 @@
 
     <!-- =========================
          GAME
+         TEXT LEFT
+         CHARACTER RIGHT
     ========================= -->
 
-    <section id="game">
+    <section id="game" class="game">
 
-        <div class="content">
-
-            <h2>THE GAME</h2>
-
-            <p>
-                Explore a mysterious world, uncover forgotten
-                memories and discover the truth behind the
-                conflict between Humans and the Awakened.
-            </p>
+        <div class="two-column">
 
 
-            <div class="game-features">
+            <div class="text fade">
 
-                <div class="feature">
+                <div class="line"></div>
 
-                    <h3>STORY</h3>
+                <h2>
+                    THE GAME
+                </h2>
 
-                    <p>
-                        A deep narrative
-                        filled with mysteries.
-                    </p>
+                <p>
 
-                </div>
+                    Explore a world where Humans and
+                    the Awakened struggle to understand
+                    one another.
 
+                    <br><br>
 
-                <div class="feature">
+                    Discover forgotten memories,
+                    uncover the truth and decide
+                    what kind of future awaits this world.
 
-                    <h3>COMBAT</h3>
-
-                    <p>
-                        Fight using unique
-                        abilities and powers.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <h3>WORLD</h3>
-
-                    <p>
-                        Discover a world
-                        shaped by conflict.
-                    </p>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <h3>CHOICES</h3>
-
-                    <p>
-                        Your decisions may
-                        change everything.
-                    </p>
-
-                </div>
+                </p>
 
             </div>
+
+
+            <div class="character fade">
+
+                <img
+                    src="character2.png"
+                    alt="Game Character"
+                >
+
+            </div>
+
 
         </div>
 
@@ -442,20 +553,23 @@
 
 
     <!-- =========================
-         RELEASE DAY
+         RELEASE
+         CENTER
     ========================= -->
 
-    <section id="release">
+    <section id="release" class="release">
 
-        <div class="content">
+        <div class="fade">
 
-            <h2>ESTIMATED RELEASE</h2>
+            <h2>
+                ESTIMATED RELEASE
+            </h2>
 
-            <div class="release-date">
+            <div class="year">
                 2027
             </div>
 
-            <div class="coming-soon">
+            <div class="coming">
                 MORE INFORMATION COMING SOON
             </div>
 
@@ -471,58 +585,54 @@
 
     <script>
 
-        const sections = document.querySelectorAll("section");
+        const fadeElements =
+            document.querySelectorAll(".fade");
 
 
         function updateFade() {
 
-            const screenCenter = window.innerHeight / 2;
+            const center =
+                window.innerHeight / 2;
 
 
-            sections.forEach(section => {
+            fadeElements.forEach(element => {
 
-                const content = section.querySelector(".content");
+                const rect =
+                    element.getBoundingClientRect();
 
-                const rect = section.getBoundingClientRect();
 
-                const sectionCenter =
+                const elementCenter =
                     rect.top + rect.height / 2;
 
 
                 const distance =
-                    Math.abs(screenCenter - sectionCenter);
+                    Math.abs(center - elementCenter);
 
 
-                /*
-                    The closer the section is to
-                    the center of the screen,
-                    the more visible it becomes.
-                */
-
-                const fadeDistance =
-                    window.innerHeight * 0.65;
+                const fadeRange =
+                    window.innerHeight * 0.75;
 
 
                 let opacity =
-                    1 - (distance / fadeDistance);
+                    1 - distance / fadeRange;
 
 
                 opacity =
-                    Math.max(0, Math.min(1, opacity));
+                    Math.max(
+                        0,
+                        Math.min(1, opacity)
+                    );
 
 
-                content.style.opacity = opacity;
+                element.style.opacity =
+                    opacity;
 
-
-                /*
-                    Small movement while fading in/out
-                */
 
                 const movement =
-                    40 * (1 - opacity);
+                    35 * (1 - opacity);
 
 
-                content.style.transform =
+                element.style.transform =
                     `translateY(${movement}px)`;
 
             });
@@ -535,6 +645,7 @@
             updateFade
         );
 
+
         window.addEventListener(
             "resize",
             updateFade
@@ -545,6 +656,9 @@
 
     </script>
 
+
 </body>
+
 </html>
 ```
+
