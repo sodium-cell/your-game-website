@@ -1,75 +1,550 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aster — Official Website</title>
+    <title>ASTER — Official Website</title>
 
     <style>
+        /* =========================
+           GENERAL
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #08090d;
             color: white;
             font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
 
-        .hero {
-            height: 100vh;
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+
+            gap: 45px;
+
+            background: rgba(8, 9, 13, 0.65);
+            backdrop-filter: blur(10px);
+
+            z-index: 1000;
         }
 
-        .hero h1 {
-            font-size: 90px;
-            letter-spacing: 15px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #aaa;
-            margin-top: 15px;
-        }
-
-        .button {
-            margin-top: 40px;
-            padding: 15px 40px;
-            border: 1px solid white;
-            color: white;
+        .navbar a {
+            color: #ffffff;
             text-decoration: none;
-            transition: 0.3s;
+
+            font-size: 14px;
+            letter-spacing: 2px;
+
+            opacity: 0.7;
+
+            transition: 0.3s ease;
         }
 
-        .button:hover {
-            background: white;
-            color: black;
+        .navbar a:hover {
+            opacity: 1;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+            max-width: 900px;
+
+            opacity: 0;
+
+            transform: translateY(40px);
+
+            transition:
+                opacity 1.2s ease,
+                transform 1.2s ease;
+        }
+
+        .content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: clamp(60px, 10vw, 130px);
+
+            letter-spacing: 20px;
+
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: clamp(40px, 6vw, 75px);
+
+            letter-spacing: 8px;
+
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #b8b8b8;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           WELCOME
+        ========================= */
+
+        #welcome {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #202536 0%,
+                    #08090d 65%
+                );
+        }
+
+        .subtitle {
+            font-size: 20px;
+
+            color: #aaa;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #181d29 0%,
+                    #08090d 70%
+                );
+        }
+
+
+        /* =========================
+           GAME
+        ========================= */
+
+        #game {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #211b29 0%,
+                    #08090d 70%
+                );
+        }
+
+        .game-features {
+            margin-top: 40px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 180px;
+
+            padding: 25px 15px;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            background: rgba(255,255,255,0.03);
+
+            transition: 0.3s ease;
+        }
+
+        .feature:hover {
+            background: rgba(255,255,255,0.08);
+
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+
+            letter-spacing: 2px;
+        }
+
+        .feature p {
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RELEASE
+        ========================= */
+
+        #release {
+            background:
+                radial-gradient(
+                    circle at center,
+                    #29231a 0%,
+                    #08090d 70%
+                );
+        }
+
+        .release-date {
+            font-size: clamp(45px, 8vw, 90px);
+
+            letter-spacing: 10px;
+
+            margin: 30px 0;
+
+            color: white;
+        }
+
+        .coming-soon {
+            color: #999;
+
+            letter-spacing: 5px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                gap: 15px;
+            }
+
+            .navbar a {
+                font-size: 10px;
+
+                letter-spacing: 1px;
+            }
+
+            h1 {
+                letter-spacing: 10px;
+            }
+
+            h2 {
+                letter-spacing: 4px;
+            }
+
+            p {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
-    <section class="hero">
 
-        <h1>ASTER</h1>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-        <p>
-            A world divided between Humans and the Awakened.
-        </p>
+    <nav class="navbar">
 
-        <a href="#world" class="button">
-            ENTER THE WORLD
-        </a>
+        <a href="#welcome">WELCOME</a>
+
+        <a href="#about">ABOUT US</a>
+
+        <a href="#game">GAME</a>
+
+        <a href="#release">RELEASE DAY</a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         WELCOME
+    ========================= -->
+
+    <section id="welcome">
+
+        <div class="content">
+
+            <h1>ASTER</h1>
+
+            <div class="subtitle">
+                A world divided by fear.
+            </div>
+
+            <p style="margin-top: 30px;">
+                In a world where humanity and the Awakened
+                struggle to coexist, one lost person may hold
+                the key to peace.
+            </p>
+
+        </div>
 
     </section>
 
+
+
+    <!-- =========================
+         ABOUT US
+    ========================= -->
+
+    <section id="about">
+
+        <div class="content">
+
+            <h2>ABOUT US</h2>
+
+            <p>
+                ASTER is a story-driven RPG project focused on
+                identity, conflict, memory and the possibility
+                of peace between two opposing factions.
+
+                <br><br>
+
+                We are creating a world where every character
+                has a story, every choice has meaning,
+                and nothing is quite what it seems.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GAME
+    ========================= -->
+
+    <section id="game">
+
+        <div class="content">
+
+            <h2>THE GAME</h2>
+
+            <p>
+                Explore a mysterious world, uncover forgotten
+                memories and discover the truth behind the
+                conflict between Humans and the Awakened.
+            </p>
+
+
+            <div class="game-features">
+
+                <div class="feature">
+
+                    <h3>STORY</h3>
+
+                    <p>
+                        A deep narrative
+                        filled with mysteries.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h3>COMBAT</h3>
+
+                    <p>
+                        Fight using unique
+                        abilities and powers.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h3>WORLD</h3>
+
+                    <p>
+                        Discover a world
+                        shaped by conflict.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <h3>CHOICES</h3>
+
+                    <p>
+                        Your decisions may
+                        change everything.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RELEASE DAY
+    ========================= -->
+
+    <section id="release">
+
+        <div class="content">
+
+            <h2>ESTIMATED RELEASE</h2>
+
+            <div class="release-date">
+                2027
+            </div>
+
+            <div class="coming-soon">
+                MORE INFORMATION COMING SOON
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FADE IN / FADE OUT
+    ========================= -->
+
+    <script>
+
+        const sections = document.querySelectorAll("section");
+
+
+        function updateFade() {
+
+            const screenCenter = window.innerHeight / 2;
+
+
+            sections.forEach(section => {
+
+                const content = section.querySelector(".content");
+
+                const rect = section.getBoundingClientRect();
+
+                const sectionCenter =
+                    rect.top + rect.height / 2;
+
+
+                const distance =
+                    Math.abs(screenCenter - sectionCenter);
+
+
+                /*
+                    The closer the section is to
+                    the center of the screen,
+                    the more visible it becomes.
+                */
+
+                const fadeDistance =
+                    window.innerHeight * 0.65;
+
+
+                let opacity =
+                    1 - (distance / fadeDistance);
+
+
+                opacity =
+                    Math.max(0, Math.min(1, opacity));
+
+
+                content.style.opacity = opacity;
+
+
+                /*
+                    Small movement while fading in/out
+                */
+
+                const movement =
+                    40 * (1 - opacity);
+
+
+                content.style.transform =
+                    `translateY(${movement}px)`;
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            updateFade
+        );
+
+        window.addEventListener(
+            "resize",
+            updateFade
+        );
+
+
+        updateFade();
+
+    </script>
+
 </body>
 </html>
+```
