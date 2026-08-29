@@ -13,32 +13,30 @@
 
     <style>
 
-        /* =================================
-           COLOR PALETTE
-        ================================= */
+        /* =====================================
+           COLORS
+        ===================================== */
 
         :root {
 
-            --pastel-yellow: #F6E7A8;
+            --yellow: #F6E7A8;
 
-            --soft-yellow: #F3E19A;
+            --yellow-light: #F9EDB9;
 
-            --cream: #FFF8DC;
+            --cream: #FFFDF5;
 
-            --dark-brown: #5C4518;
+            --brown: #5C4518;
 
-            --warm-brown: #6B5425;
+            --brown-light: #6B5425;
 
-            --muted-gold: #9A7B32;
-
-            --soft-olive: #74764A;
+            --gold: #9A7B32;
 
         }
 
 
-        /* =================================
-           GENERAL
-        ================================= */
+        /* =====================================
+           RESET
+        ===================================== */
 
         * {
 
@@ -66,19 +64,19 @@
                 serif;
 
             background:
-                var(--pastel-yellow);
+                var(--yellow);
 
             color:
-                var(--dark-brown);
+                var(--brown);
 
             overflow-x: hidden;
 
         }
 
 
-        /* =================================
-           NAVIGATION BAR
-        ================================= */
+        /* =====================================
+           NAVBAR
+        ===================================== */
 
         .navbar {
 
@@ -101,7 +99,7 @@
             gap: 45px;
 
             background:
-                rgba(246, 231, 168, 0.78);
+                rgba(246, 231, 168, 0.80);
 
             backdrop-filter:
                 blur(10px);
@@ -112,17 +110,18 @@
             z-index: 1000;
 
             border-bottom:
-                1px solid rgba(92, 69, 24, 0.08);
+                1px solid
+                rgba(92, 69, 24, 0.08);
 
         }
 
 
         .navbar a {
 
-            text-decoration: none;
-
             color:
-                var(--dark-brown);
+                var(--brown);
+
+            text-decoration: none;
 
             font-size: 13px;
 
@@ -137,7 +136,7 @@
         .navbar a:hover {
 
             color:
-                var(--muted-gold);
+                var(--gold);
 
             transform:
                 translateY(-2px);
@@ -145,9 +144,9 @@
         }
 
 
-        /* =================================
+        /* =====================================
            SECTIONS
-        ================================= */
+        ===================================== */
 
         section {
 
@@ -169,44 +168,34 @@
         }
 
 
-        /* =================================
-           FADE EFFECT
-        ================================= */
+        /* =====================================
+           FADE ANIMATION
+        ===================================== */
 
         .fade {
 
             opacity: 0;
 
             transform:
-                translateY(35px);
+                translateY(40px);
 
             transition:
-                opacity 1.2s ease,
-                transform 1.2s ease;
+                opacity 1.3s ease,
+                transform 1.3s ease;
 
         }
 
 
-        .fade.visible {
-
-            opacity: 1;
-
-            transform:
-                translateY(0);
-
-        }
-
-
-        /* =================================
+        /* =====================================
            WELCOME
-        ================================= */
+        ===================================== */
 
         #welcome {
 
-            text-align: center;
-
             background:
-                var(--pastel-yellow);
+                var(--yellow);
+
+            text-align: center;
 
             flex-direction: column;
 
@@ -223,63 +212,70 @@
         .welcome-title {
 
             font-size:
-                clamp(55px, 10vw, 125px);
+                clamp(50px, 9vw, 120px);
 
-            font-weight: normal;
+            font-weight:
+                normal;
 
             letter-spacing:
-                12px;
+                10px;
 
             color:
-                var(--dark-brown);
+                var(--brown);
 
-            line-height: 1.1;
+            line-height:
+                1.1;
 
         }
 
 
         .welcome-subtitle {
 
-            margin-top: 25px;
+            margin-top:
+                20px;
 
             font-size:
-                clamp(18px, 2vw, 24px);
-
-            letter-spacing:
-                3px;
+                clamp(18px, 2vw, 25px);
 
             color:
-                var(--warm-brown);
+                var(--gold);
+
+            letter-spacing:
+                4px;
 
         }
 
 
         .welcome-description {
 
-            max-width: 650px;
+            max-width:
+                650px;
 
             margin:
                 25px auto 0;
 
-            font-size: 17px;
+            font-size:
+                17px;
 
-            line-height: 1.8;
+            line-height:
+                1.9;
 
             color:
-                var(--warm-brown);
+                var(--brown-light);
 
         }
 
 
-        /* =================================
-           TWO COLUMN LAYOUT
-        ================================= */
+        /* =====================================
+           TWO COLUMN
+        ===================================== */
 
         .two-column {
 
             width: 100%;
 
-            max-width: 1200px;
+            max-width:
+                1200px;
 
             display: flex;
 
@@ -292,26 +288,54 @@
         }
 
 
+        /* =====================================
+           PHOTO FRAME
+        ===================================== */
+
         .character {
 
             width: 45%;
 
-            min-height: 500px;
-
             display: flex;
 
-            align-items: flex-end;
-
             justify-content: center;
+
+            align-items: center;
 
         }
 
 
-        .character img {
+        .photo-frame {
 
-            max-width: 100%;
+            width: 390px;
 
-            max-height: 650px;
+            height: 520px;
+
+            background:
+                var(--cream);
+
+            padding: 20px;
+
+            box-shadow:
+                0 18px 40px
+                rgba(92, 69, 24, 0.15);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+        }
+
+
+        .photo-frame img {
+
+            width: 100%;
+
+            height: 100%;
 
             object-fit: contain;
 
@@ -320,9 +344,53 @@
         }
 
 
+        /* =====================================
+           PHOTO CAPTION
+        ===================================== */
+
+        .photo-caption {
+
+            position: absolute;
+
+            bottom: -42px;
+
+            left: 0;
+
+            width: 100%;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            color:
+                var(--brown-light);
+
+        }
+
+
+        /* =====================================
+           TEXT
+        ===================================== */
+
         .text {
 
             width: 45%;
+
+        }
+
+
+        .line {
+
+            width: 65px;
+
+            height: 2px;
+
+            background:
+                var(--gold);
+
+            margin-bottom: 25px;
 
         }
 
@@ -332,52 +400,43 @@
             font-size:
                 clamp(45px, 6vw, 80px);
 
-            font-weight: normal;
+            font-weight:
+                normal;
 
             letter-spacing:
                 5px;
 
-            line-height: 1.1;
-
-            margin-bottom: 25px;
-
             color:
-                var(--dark-brown);
+                var(--brown);
+
+            margin-bottom:
+                25px;
+
+            line-height:
+                1.1;
 
         }
 
 
         .text p {
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            line-height: 1.9;
+            line-height:
+                1.9;
 
             color:
-                var(--warm-brown);
+                var(--brown-light);
 
         }
 
 
-        .line {
-
-            width: 70px;
-
-            height: 2px;
-
-            background:
-                var(--muted-gold);
-
-            margin-bottom: 25px;
-
-        }
-
-
-        /* =================================
+        /* =====================================
            ABOUT US
-           CHARACTER LEFT
+           IMAGE LEFT
            TEXT RIGHT
-        ================================= */
+        ===================================== */
 
         #about {
 
@@ -389,45 +448,51 @@
 
         #about .two-column {
 
-            flex-direction: row;
+            flex-direction:
+                row;
 
         }
 
 
-        /* =================================
+        /* =====================================
            GAME
            TEXT LEFT
-           CHARACTER RIGHT
-        ================================= */
+           IMAGE RIGHT
+        ===================================== */
 
         #game {
 
             background:
-                var(--soft-yellow);
+                var(--yellow-light);
 
         }
 
 
         #game .two-column {
 
-            flex-direction: row;
+            flex-direction:
+                row;
 
         }
 
 
-        /* =================================
+        /* =====================================
            GAME FEATURES
-        ================================= */
+        ===================================== */
 
         .features {
 
-            margin-top: 35px;
+            margin-top:
+                30px;
 
-            display: flex;
+            display:
+                flex;
 
-            flex-wrap: wrap;
+            flex-wrap:
+                wrap;
 
-            gap: 12px;
+            gap:
+                12px;
 
         }
 
@@ -435,43 +500,49 @@
         .feature {
 
             padding:
-                10px 18px;
+                9px 18px;
 
             border:
                 1px solid
                 rgba(92, 69, 24, 0.25);
 
-            border-radius: 30px;
+            border-radius:
+                30px;
 
             color:
-                var(--dark-brown);
+                var(--brown);
 
-            font-size: 13px;
+            font-size:
+                12px;
 
-            letter-spacing: 1px;
+            letter-spacing:
+                1px;
 
         }
 
 
-        /* =================================
-           RELEASE DAY
-        ================================= */
+        /* =====================================
+           RELEASE
+        ===================================== */
 
         #release {
 
             background:
-                var(--pastel-yellow);
+                var(--yellow);
 
-            text-align: center;
+            text-align:
+                center;
 
-            flex-direction: column;
+            flex-direction:
+                column;
 
         }
 
 
         .release-content {
 
-            max-width: 1000px;
+            max-width:
+                1000px;
 
         }
 
@@ -479,22 +550,24 @@
         .release-title {
 
             font-size:
-                clamp(38px, 6vw, 75px);
+                clamp(35px, 6vw, 75px);
 
-            font-weight: normal;
+            font-weight:
+                normal;
 
             letter-spacing:
                 6px;
 
             color:
-                var(--dark-brown);
+                var(--brown);
 
         }
 
 
         .release-year {
 
-            margin-top: 20px;
+            margin-top:
+                25px;
 
             font-size:
                 clamp(80px, 14vw, 170px);
@@ -502,74 +575,84 @@
             letter-spacing:
                 15px;
 
-            color:
-                var(--muted-gold);
+            line-height:
+                1;
 
-            line-height: 1;
+            color:
+                var(--gold);
 
         }
 
 
         .release-note {
 
-            margin-top: 25px;
+            margin-top:
+                25px;
 
-            font-size: 15px;
+            font-size:
+                14px;
 
             letter-spacing:
                 4px;
 
             color:
-                var(--warm-brown);
+                var(--brown-light);
 
         }
 
 
-        /* =================================
+        /* =====================================
            FOOTER
-        ================================= */
+        ===================================== */
 
         footer {
-
-            text-align: center;
 
             padding:
                 25px;
 
+            text-align:
+                center;
+
             background:
-                var(--dark-brown);
+                var(--brown);
 
             color:
                 var(--cream);
 
-            font-size: 12px;
+            font-size:
+                12px;
 
-            letter-spacing: 2px;
+            letter-spacing:
+                2px;
 
         }
 
 
-        /* =================================
+        /* =====================================
            MOBILE
-        ================================= */
+        ===================================== */
 
         @media (max-width: 800px) {
 
 
             .navbar {
 
-                gap: 14px;
+                gap:
+                    13px;
 
-                height: 65px;
+                height:
+                    65px;
 
             }
 
 
             .navbar a {
 
-                font-size: 9px;
+                font-size:
+                    8px;
 
-                letter-spacing: 1px;
+                letter-spacing:
+                    1px;
 
             }
 
@@ -587,52 +670,57 @@
                 flex-direction:
                     column !important;
 
-                gap: 30px;
-
-                text-align: center;
+                gap:
+                    70px;
 
             }
 
 
             .character {
 
-                width: 85%;
-
-                min-height: auto;
-
-                order: 1;
+                width:
+                    100%;
 
             }
 
 
             .text {
 
-                width: 90%;
+                width:
+                    95%;
 
-                order: 2;
+                text-align:
+                    center;
 
             }
 
 
             .line {
 
-                margin-left: auto;
+                margin-left:
+                    auto;
 
-                margin-right: auto;
+                margin-right:
+                    auto;
 
             }
 
 
-            .character img {
+            .photo-frame {
 
-                max-height: 450px;
+                width:
+                    300px;
+
+                height:
+                    400px;
 
             }
 
 
             .features {
 
-                justify-content: center;
+                justify-content:
+                    center;
 
             }
 
@@ -640,7 +728,7 @@
             .welcome-title {
 
                 letter-spacing:
-                    7px;
+                    6px;
 
             }
 
@@ -663,9 +751,9 @@
 <body>
 
 
-    <!-- =================================
+    <!-- =====================================
          NAVBAR
-    ================================= -->
+    ===================================== -->
 
     <nav class="navbar">
 
@@ -689,14 +777,15 @@
 
 
 
-    <!-- =================================
+    <!-- =====================================
          WELCOME
-         CENTER
-    ================================= -->
+    ===================================== -->
 
     <section id="welcome">
 
+
         <div class="welcome-content fade">
+
 
             <h1 class="welcome-title">
 
@@ -719,43 +808,54 @@
 
             </p>
 
+
         </div>
+
 
     </section>
 
 
 
-    <!-- =================================
+    <!-- =====================================
          ABOUT US
-         CHARACTER LEFT
+         PHOTO LEFT
          TEXT RIGHT
-    ================================= -->
+    ===================================== -->
 
     <section id="about">
+
 
         <div class="two-column">
 
 
             <div class="character fade">
 
-                <!--
-                    PUT YOUR CHARACTER IMAGE HERE.
 
-                    Example:
+                <div class="photo-frame">
 
-                    character1.png
-                -->
 
-                <img
-                    src="character1.png"
-                    alt="Character"
-                >
+                    <img
+                        src="character1.png"
+                        alt="Character"
+                    >
+
+
+                    <div class="photo-caption">
+
+                        CHARACTER
+
+                    </div>
+
+
+                </div>
+
 
             </div>
 
 
 
             <div class="text fade">
+
 
                 <div class="line"></div>
 
@@ -785,27 +885,31 @@
 
                 </p>
 
+
             </div>
 
 
         </div>
 
+
     </section>
 
 
 
-    <!-- =================================
+    <!-- =====================================
          GAME
          TEXT LEFT
-         CHARACTER RIGHT
-    ================================= -->
+         PHOTO RIGHT
+    ===================================== -->
 
     <section id="game">
+
 
         <div class="two-column">
 
 
             <div class="text fade">
+
 
                 <div class="line"></div>
 
@@ -835,23 +939,29 @@
 
                 <div class="features">
 
+
                     <div class="feature">
                         STORY
                     </div>
+
 
                     <div class="feature">
                         RPG
                     </div>
 
+
                     <div class="feature">
                         COMBAT
                     </div>
+
 
                     <div class="feature">
                         EXPLORATION
                     </div>
 
+
                 </div>
+
 
             </div>
 
@@ -859,34 +969,42 @@
 
             <div class="character fade">
 
-                <!--
-                    PUT ANOTHER CHARACTER IMAGE HERE.
 
-                    Example:
+                <div class="photo-frame">
 
-                    character2.png
-                -->
 
-                <img
-                    src="character2.png"
-                    alt="Game Character"
-                >
+                    <img
+                        src="character2.png"
+                        alt="Game Character"
+                    >
+
+
+                    <div class="photo-caption">
+
+                        THE WORLD
+
+                    </div>
+
+
+                </div>
+
 
             </div>
 
 
         </div>
 
+
     </section>
 
 
 
-    <!-- =================================
+    <!-- =====================================
          RELEASE DAY
-         CENTER
-    ================================= -->
+    ===================================== -->
 
     <section id="release">
+
 
         <div class="release-content fade">
 
@@ -914,13 +1032,14 @@
 
         </div>
 
+
     </section>
 
 
 
-    <!-- =================================
+    <!-- =====================================
          FOOTER
-    ================================= -->
+    ===================================== -->
 
     <footer>
 
@@ -930,14 +1049,14 @@
 
 
 
-    <!-- =================================
-         FADE IN / FADE OUT SCRIPT
-    ================================= -->
+    <!-- =====================================
+         FADE SCRIPT
+    ===================================== -->
 
     <script>
 
 
-        const fadeElements =
+        const elements =
             document.querySelectorAll(".fade");
 
 
@@ -948,7 +1067,7 @@
                 window.innerHeight / 2;
 
 
-            fadeElements.forEach(element => {
+            elements.forEach(element => {
 
 
                 const rect =
@@ -968,7 +1087,7 @@
 
 
                 const fadeRange =
-                    window.innerHeight * 0.75;
+                    window.innerHeight * 0.70;
 
 
                 let opacity =
@@ -992,7 +1111,7 @@
 
 
                 const movement =
-                    35 *
+                    40 *
                     (1 - opacity);
 
 
