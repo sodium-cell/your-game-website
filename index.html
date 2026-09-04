@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ReAwakening: Savior of Memories</title>
 
+
     <style>
 
-        /* =========================
-           GENERAL
-        ========================= */
+        /* ========================================
+           RESET
+        ======================================== */
 
         * {
             margin: 0;
@@ -24,8 +28,11 @@
 
         body {
             font-family: Georgia, "Times New Roman", serif;
+
             background: #F6E7A8;
+
             color: #5C4518;
+
             overflow-x: hidden;
         }
 
@@ -35,12 +42,14 @@
         }
 
 
-        /* =========================
+        /* ========================================
            NAVBAR
-        ========================= */
+        ======================================== */
 
         nav {
+
             position: fixed;
+
             top: 0;
             left: 0;
 
@@ -48,197 +57,177 @@
             height: 72px;
 
             display: flex;
+
             justify-content: center;
             align-items: center;
 
-            gap: 38px;
+            gap: 40px;
 
-            background: rgba(246, 231, 168, 0.88);
+            background: rgba(246, 231, 168, 0.9);
+
             backdrop-filter: blur(10px);
 
-            border-bottom: 1px solid rgba(92, 69, 24, 0.15);
+            border-bottom:
+                1px solid rgba(92, 69, 24, 0.15);
 
             z-index: 1000;
         }
 
         nav a {
-            font-size: 13px;
+
+            font-size: 12px;
+
             font-weight: bold;
+
             letter-spacing: 2px;
 
             transition: 0.3s;
         }
 
         nav a:hover {
+
             color: #9A7B32;
+
             transform: translateY(-2px);
         }
 
 
-        /* =========================
-           FIXED CHARACTERS
-           ========================= */
-
-        .character {
-            position: fixed;
-
-            bottom: 0;
-
-            width: 260px;
-
-            z-index: 50;
-
-            pointer-events: none;
-
-            transition:
-                transform 0.15s ease-out,
-                filter 0.4s ease;
-        }
-
-        .character img {
-            width: 100%;
-            height: auto;
-
-            display: block;
-
-            filter:
-                drop-shadow(0 12px 15px rgba(92, 69, 24, 0.18));
-        }
-
-        /* LEFT CHARACTER */
-
-        .character-left {
-            left: 2%;
-        }
-
-        /* RIGHT CHARACTER */
-
-        .character-right {
-            right: 2%;
-        }
-
-
-        /* =========================
-           MAIN CONTENT
-           ========================= */
-
-        main {
-            position: relative;
-            z-index: 10;
-        }
+        /* ========================================
+           SECTIONS
+        ======================================== */
 
         section {
+
             min-height: 100vh;
 
             padding:
-                130px
-                max(8%, 150px)
+                120px
+                8%
                 100px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             position: relative;
         }
 
 
-        /* =========================
-           CONTENT CONTAINER
-           ========================= */
-
-        .content {
-            width: min(850px, 90%);
-
-            text-align: center;
-
-            position: relative;
-
-            background: rgba(255, 253, 245, 0.18);
-
-            padding: 55px 65px;
-
-            border: 1px solid rgba(92, 69, 24, 0.13);
-
-            box-shadow:
-                0 15px 40px rgba(92, 69, 24, 0.07);
-
-            backdrop-filter: blur(3px);
-        }
-
-
-        /* =========================
+        /* ========================================
            SECTION NUMBER
-           ========================= */
+        ======================================== */
 
         .section-number {
+
             position: absolute;
 
-            top: 35px;
-            right: 6%;
+            top: 105px;
 
-            font-size: 12px;
+            right: 7%;
+
+            font-size: 11px;
 
             letter-spacing: 4px;
 
-            opacity: 0.55;
+            opacity: 0.5;
         }
 
 
-        /* =========================
-           TITLES
-           ========================= */
+        /* ========================================
+           CONTENT
+        ======================================== */
+
+        .content {
+
+            width: min(950px, 90%);
+
+            padding: 55px 65px;
+
+            background:
+                rgba(255, 253, 245, 0.25);
+
+            border:
+                1px solid rgba(92, 69, 24, 0.15);
+
+            box-shadow:
+                0 20px 50px
+                rgba(92, 69, 24, 0.07);
+
+            backdrop-filter: blur(4px);
+
+            text-align: center;
+        }
+
+
+        /* ========================================
+           SCROLL ANIMATION
+        ======================================== */
+
+        .scroll-content {
+
+            opacity: 0;
+
+            transform: translateY(60px);
+
+            transition:
+                opacity 0.25s linear,
+                transform 0.25s linear;
+        }
+
+
+        /* ========================================
+           TEXT
+        ======================================== */
 
         .eyebrow {
-            font-size: 12px;
+
+            font-size: 11px;
 
             letter-spacing: 5px;
 
             font-weight: bold;
 
-            margin-bottom: 18px;
+            opacity: 0.65;
 
-            opacity: 0.7;
+            margin-bottom: 18px;
         }
 
         h1 {
-            font-size: clamp(55px, 8vw, 105px);
+
+            font-size:
+                clamp(55px, 9vw, 110px);
 
             line-height: 0.9;
-
-            letter-spacing: 5px;
-
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: clamp(35px, 5vw, 65px);
 
             letter-spacing: 5px;
 
             margin-bottom: 20px;
         }
 
+        h2 {
+
+            font-size:
+                clamp(38px, 6vw, 65px);
+
+            letter-spacing: 5px;
+
+            margin-bottom: 25px;
+        }
+
         h3 {
-            font-size: 21px;
+
+            font-size: 18px;
 
             letter-spacing: 2px;
 
             margin-bottom: 10px;
         }
 
-        .subtitle {
-            font-size: 20px;
-
-            letter-spacing: 6px;
-
-            margin-bottom: 25px;
-
-            color: #9A7B32;
-        }
-
         p {
-            font-size: 16px;
+
+            font-size: 15px;
 
             line-height: 1.8;
 
@@ -246,11 +235,12 @@
         }
 
 
-        /* =========================
+        /* ========================================
            WELCOME
-           ========================= */
+        ======================================== */
 
         #welcome .content {
+
             background: transparent;
 
             border: none;
@@ -260,8 +250,20 @@
             backdrop-filter: none;
         }
 
+        .subtitle {
+
+            font-size: 19px;
+
+            letter-spacing: 6px;
+
+            color: #9A7B32;
+
+            margin-bottom: 25px;
+        }
+
         .welcome-line {
-            width: 120px;
+
+            width: 130px;
 
             height: 1px;
 
@@ -270,26 +272,38 @@
             margin: 30px auto;
         }
 
+        .welcome-text {
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
         .welcome-small {
-            font-size: 12px;
+
+            margin-top: 25px;
+
+            font-size: 10px;
 
             letter-spacing: 4px;
 
-            opacity: 0.7;
-
-            margin-top: 30px;
+            opacity: 0.6;
         }
 
         .enter-button {
+
             display: inline-block;
 
             margin-top: 30px;
 
-            padding: 15px 35px;
+            padding:
+                15px
+                35px;
 
-            border: 1px solid #6B5425;
+            border:
+                1px solid #6B5425;
 
-            font-size: 12px;
+            font-size: 11px;
 
             letter-spacing: 3px;
 
@@ -297,6 +311,7 @@
         }
 
         .enter-button:hover {
+
             background: #5C4518;
 
             color: #FFFDF5;
@@ -305,325 +320,38 @@
         }
 
 
-        /* =========================
-           ABOUT US
-           ========================= */
-
-        .about-layout {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 45px;
-
-            text-align: left;
-
-            align-items: center;
-        }
-
-        .about-text {
-            text-align: left;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-        }
-
-
-        /* =========================
-           CREDITS
-           ========================= */
-
-        .credits {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 12px;
-
-            margin-top: 25px;
-        }
-
-        .credit-card {
-            padding: 17px;
-
-            border: 1px solid rgba(92, 69, 24, 0.18);
-
-            background: rgba(255, 253, 245, 0.35);
-
-            transition: 0.3s;
-        }
-
-        .credit-card:hover {
-            transform: translateY(-4px);
-
-            background: rgba(255, 253, 245, 0.65);
-        }
-
-        .credit-title {
-            font-size: 10px;
-
-            letter-spacing: 3px;
-
-            opacity: 0.6;
-
-            margin-bottom: 6px;
-        }
-
-        .credit-name {
-            font-size: 14px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           LORE
-           ========================= */
-
-        .lore-text {
-            text-align: left;
-        }
-
-        .lore-text p {
-            margin-bottom: 20px;
-        }
-
-        .lore-divider {
-            width: 100%;
-
-            height: 1px;
-
-            background: rgba(92, 69, 24, 0.2);
-
-            margin: 25px 0;
-        }
-
-
-        /* =========================
-           FACTION CARDS
-           ========================= */
-
-        .factions {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 15px;
-
-            margin-top: 25px;
-        }
-
-        .faction {
-            padding: 25px;
-
-            border: 1px solid rgba(92, 69, 24, 0.18);
-
-            text-align: left;
-
-            background: rgba(255, 253, 245, 0.28);
-        }
-
-        .faction h3 {
-            font-size: 16px;
-
-            letter-spacing: 3px;
-        }
-
-        .faction p {
-            font-size: 13px;
-
-            line-height: 1.6;
-        }
-
-        .faction-symbol {
-            font-size: 25px;
-
-            margin-bottom: 10px;
-        }
-
-
-        /* =========================
-           GAMEPLAY
-           ========================= */
-
-        .gameplay-layout {
-            text-align: left;
-        }
-
-        .gameplay-description {
-            margin-bottom: 30px;
-
-            max-width: 650px;
-        }
-
-        .features {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 14px;
-        }
-
-        .feature {
-            padding: 22px;
-
-            border-left: 2px solid #9A7B32;
-
-            background: rgba(255, 253, 245, 0.28);
-
-            transition: 0.3s;
-        }
-
-        .feature:hover {
-            transform: translateX(6px);
-
-            background: rgba(255, 253, 245, 0.55);
-        }
-
-        .feature-number {
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            opacity: 0.5;
-
-            margin-bottom: 8px;
-        }
-
-        .feature h3 {
-            font-size: 15px;
-
-            letter-spacing: 2px;
-        }
-
-        .feature p {
-            font-size: 13px;
-
-            line-height: 1.6;
-        }
-
-
-        /* =========================
-           RELEASE DAY
-           ========================= */
-
-        #release {
-            text-align: center;
-        }
-
-        #release .content {
-            background: transparent;
-
-            border: none;
-
-            box-shadow: none;
-        }
-
-        .release-label {
-            font-size: 12px;
-
-            letter-spacing: 5px;
-
-            opacity: 0.65;
-
-            margin-bottom: 20px;
-        }
-
-        .release-year {
-            font-size: clamp(80px, 15vw, 170px);
-
-            line-height: 0.9;
-
-            letter-spacing: 10px;
-
-            color: #9A7B32;
-
-            margin-bottom: 25px;
-        }
-
-        .status {
-            display: inline-block;
-
-            padding: 9px 20px;
-
-            border: 1px solid #6B5425;
-
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 25px;
-        }
-
-        .release-message {
-            max-width: 600px;
-
-            margin: auto;
-        }
-
-
-        /* =========================
-           FOOTER
-           ========================= */
-
-        footer {
-            text-align: center;
-
-            padding: 35px 20px;
-
-            border-top: 1px solid rgba(92, 69, 24, 0.15);
-
-            font-size: 11px;
-
-            letter-spacing: 3px;
-
-            opacity: 0.7;
-        }
-
-
-        /* =========================
-           FADE / SLIDE CONTENT
-           ========================= */
-
-        .scroll-content {
-            opacity: 0;
-
-            transform: translateY(45px);
-
-            transition:
-                opacity 0.15s linear,
-                transform 0.15s linear;
-        }
-
-
-        /* =========================
+        /* ========================================
            DECORATIONS
-           ========================= */
+        ======================================== */
 
         .decor-line {
+
             position: absolute;
 
             width: 1px;
 
-            height: 100px;
+            height: 120px;
 
-            background: rgba(92, 69, 24, 0.25);
+            background:
+                rgba(92, 69, 24, 0.25);
         }
 
         .decor-left {
+
             left: 8%;
 
             top: 30%;
         }
 
         .decor-right {
+
             right: 8%;
 
             bottom: 30%;
         }
 
         .dot {
+
             position: absolute;
 
             width: 7px;
@@ -638,178 +366,485 @@
         }
 
         .dot-one {
+
             top: 25%;
 
             left: 14%;
         }
 
         .dot-two {
-            bottom: 22%;
 
-            right: 15%;
+            bottom: 20%;
+
+            right: 14%;
         }
 
 
-        /* =========================
+        /* ========================================
+           ABOUT
+        ======================================== */
+
+        .about-intro {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .about-intro p {
+
+            margin-bottom: 18px;
+        }
+
+        .divider {
+
+            width: 100%;
+
+            height: 1px;
+
+            background:
+                rgba(92, 69, 24, 0.18);
+
+            margin:
+                35px
+                0;
+        }
+
+
+        /* ========================================
+           CREDITS
+        ======================================== */
+
+        .credits {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            text-align: left;
+        }
+
+        .credit-card {
+
+            padding: 22px;
+
+            background:
+                rgba(255, 253, 245, 0.4);
+
+            border:
+                1px solid rgba(92, 69, 24, 0.15);
+
+            transition: 0.3s;
+        }
+
+        .credit-card:hover {
+
+            transform: translateY(-5px);
+
+            background:
+                rgba(255, 253, 245, 0.65);
+        }
+
+        .credit-title {
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            opacity: 0.55;
+
+            margin-bottom: 8px;
+        }
+
+        .credit-name {
+
+            font-size: 15px;
+
+            font-weight: bold;
+        }
+
+
+        /* ========================================
+           LORE
+        ======================================== */
+
+        .lore-main {
+
+            text-align: left;
+
+            max-width: 750px;
+
+            margin: auto;
+        }
+
+        .lore-main p {
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ========================================
+           FACTIONS
+        ======================================== */
+
+        .factions {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+            margin-top: 25px;
+        }
+
+        .faction {
+
+            padding: 28px;
+
+            text-align: left;
+
+            background:
+                rgba(255, 253, 245, 0.35);
+
+            border:
+                1px solid rgba(92, 69, 24, 0.18);
+
+            transition: 0.3s;
+        }
+
+        .faction:hover {
+
+            transform: translateY(-5px);
+
+            background:
+                rgba(255, 253, 245, 0.6);
+        }
+
+        .faction-symbol {
+
+            font-size: 27px;
+
+            margin-bottom: 12px;
+        }
+
+        .faction h3 {
+
+            letter-spacing: 3px;
+
+            font-size: 17px;
+        }
+
+        .faction p {
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ========================================
+           GAMEPLAY
+        ======================================== */
+
+        .gameplay-intro {
+
+            max-width: 700px;
+
+            margin: auto auto 35px;
+
+            text-align: center;
+        }
+
+        .features {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+
+            text-align: left;
+        }
+
+        .feature {
+
+            padding: 25px;
+
+            background:
+                rgba(255, 253, 245, 0.35);
+
+            border-left:
+                3px solid #9A7B32;
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+
+            transform: translateX(7px);
+
+            background:
+                rgba(255, 253, 245, 0.6);
+        }
+
+        .feature-number {
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            opacity: 0.5;
+
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+
+            font-size: 16px;
+
+            letter-spacing: 2px;
+        }
+
+        .feature p {
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ========================================
+           RELEASE
+        ======================================== */
+
+        #release .content {
+
+            background: transparent;
+
+            border: none;
+
+            box-shadow: none;
+
+            backdrop-filter: none;
+        }
+
+        .release-label {
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            opacity: 0.6;
+
+            margin-bottom: 20px;
+        }
+
+        .release-year {
+
+            font-size:
+                clamp(80px, 16vw, 170px);
+
+            line-height: 0.9;
+
+            letter-spacing: 10px;
+
+            color: #9A7B32;
+
+            margin-bottom: 30px;
+        }
+
+        .status {
+
+            display: inline-block;
+
+            padding:
+                10px
+                20px;
+
+            border:
+                1px solid #6B5425;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 30px;
+        }
+
+        .release-message {
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+        .final-line {
+
+            margin-top: 30px;
+
+            font-size: 18px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+
+            padding:
+                40px
+                20px;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(92, 69, 24, 0.15);
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            opacity: 0.65;
+        }
+
+
+        /* ========================================
            MOBILE
-           ========================= */
+        ======================================== */
 
-        @media (max-width: 1000px) {
-
-            .character {
-                width: 190px;
-            }
-
-            .character-left {
-                left: -20px;
-            }
-
-            .character-right {
-                right: -20px;
-            }
-
-            section {
-                padding-left: 100px;
-                padding-right: 100px;
-            }
-
-        }
-
-
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
 
             nav {
-                gap: 13px;
 
                 height: 60px;
+
+                gap: 14px;
             }
 
             nav a {
+
                 font-size: 8px;
 
                 letter-spacing: 1px;
             }
 
-            .character {
-                width: 120px;
-
-                opacity: 0.9;
-            }
-
-            .character-left {
-                left: -25px;
-            }
-
-            .character-right {
-                right: -25px;
-            }
-
             section {
+
                 padding:
                     100px
-                    30px
+                    25px
                     70px;
             }
 
             .content {
+
                 width: 100%;
 
-                padding: 35px 25px;
+                padding:
+                    40px
+                    25px;
+            }
+
+            .section-number {
+
+                top: 75px;
+
+                right: 25px;
             }
 
             h1 {
-                font-size: 45px;
+
+                font-size: 48px;
             }
 
             h2 {
+
                 font-size: 35px;
             }
 
             .subtitle {
-                font-size: 14px;
+
+                font-size: 13px;
 
                 letter-spacing: 3px;
             }
 
+            .credits,
+            .factions,
+            .features {
+
+                grid-template-columns: 1fr;
+            }
+
             p {
+
                 font-size: 14px;
             }
 
-            .about-layout {
-                grid-template-columns: 1fr;
-            }
+            .decor-line,
+            .dot {
 
-            .credits {
-                grid-template-columns: 1fr;
-            }
-
-            .factions {
-                grid-template-columns: 1fr;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            .section-number {
-                right: 25px;
-
-                top: 80px;
+                display: none;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
+    <!-- ========================================
          NAVIGATION
-         ========================= -->
+    ======================================== -->
 
     <nav>
 
-        <a href="#welcome">WELCOME</a>
+        <a href="#welcome">
+            WELCOME
+        </a>
 
-        <a href="#about">ABOUT US</a>
+        <a href="#about">
+            ABOUT US
+        </a>
 
-        <a href="#lore">LORE</a>
+        <a href="#lore">
+            LORE
+        </a>
 
-        <a href="#gameplay">GAMEPLAY</a>
+        <a href="#gameplay">
+            GAMEPLAY
+        </a>
 
-        <a href="#release">RELEASE DAY</a>
+        <a href="#release">
+            RELEASE DAY
+        </a>
 
     </nav>
-
-
-    <!-- =========================
-         FIXED CHARACTERS
-         ========================= -->
-
-    <div class="character character-left">
-
-        <img src="character1.png" alt="Character">
-
-    </div>
-
-
-    <div class="character character-right">
-
-        <img src="character2.png" alt="Omniel">
-
-    </div>
 
 
 
     <main>
 
 
-        <!-- =========================
+        <!-- ========================================
              WELCOME
-             ========================= -->
+        ======================================== -->
 
         <section id="welcome">
 
@@ -821,33 +856,48 @@
 
             <div class="dot dot-one"></div>
 
+
             <div class="content scroll-content">
 
                 <div class="eyebrow">
                     A STORY-DRIVEN INDIE RPG
                 </div>
 
+
                 <h1>
                     ReAwakening
                 </h1>
+
 
                 <div class="subtitle">
                     SAVIOR OF MEMORIES
                 </div>
 
+
                 <div class="welcome-line"></div>
 
-                <p>
+
+                <p class="welcome-text">
+
                     Every memory hides a truth.<br>
+
                     Every truth has a price.
+
                 </p>
 
-                <a href="#about" class="enter-button">
+
+                <a
+                    href="#about"
+                    class="enter-button"
+                >
                     ENTER THE WORLD
                 </a>
 
+
                 <div class="welcome-small">
+
                     MEMORY • IDENTITY • TRUTH
+
                 </div>
 
             </div>
@@ -856,9 +906,9 @@
 
 
 
-        <!-- =========================
+        <!-- ========================================
              ABOUT US
-             ========================= -->
+        ======================================== -->
 
         <section id="about">
 
@@ -866,48 +916,48 @@
                 02 / 05
             </div>
 
+
             <div class="content scroll-content">
 
-                <div class="about-layout">
-
-                    <div>
-
-                        <div class="eyebrow">
-                            THE PEOPLE BEHIND THE WORLD
-                        </div>
-
-                        <h2>
-                            ABOUT US
-                        </h2>
-
-                    </div>
+                <div class="eyebrow">
+                    THE PEOPLE BEHIND THE WORLD
+                </div>
 
 
-                    <div class="about-text">
+                <h2>
+                    ABOUT US
+                </h2>
 
-                        <p>
-                            ReAwakening: Savior of Memories is
-                            a small indie game created by young
-                            creators with a love for storytelling,
-                            art, music and game development.
-                        </p>
 
-                        <p>
-                            What started as an idea slowly became
-                            an entire world filled with memories,
-                            conflicts, characters and unanswered
-                            questions.
-                        </p>
+                <div class="about-intro">
 
-                    </div>
+                    <p>
+
+                        ReAwakening: Savior of Memories
+                        is a small indie game created by
+                        young creators who love storytelling,
+                        art, music and game development.
+
+                    </p>
+
+
+                    <p>
+
+                        What started as a simple idea slowly
+                        became a world filled with characters,
+                        memories, conflicts and unanswered
+                        questions.
+
+                    </p>
 
                 </div>
 
 
-                <div class="lore-divider"></div>
+                <div class="divider"></div>
 
 
                 <div class="credits">
+
 
                     <div class="credit-card">
 
@@ -960,18 +1010,20 @@
 
                     </div>
 
+
                 </div>
 
 
                 <p style="
                     margin-top:30px;
-                    font-size:13px;
+                    font-size:12px;
                     letter-spacing:1px;
-                    opacity:0.75;
+                    opacity:0.7;
                 ">
 
-                    A game made by young creators, aged 12–13,
-                    with nothing but passion and imagination.
+                    A game made by young creators,
+                    aged 12–13, with nothing but passion
+                    and imagination.
 
                 </p>
 
@@ -981,9 +1033,9 @@
 
 
 
-        <!-- =========================
+        <!-- ========================================
              LORE
-             ========================= -->
+        ======================================== -->
 
         <section id="lore">
 
@@ -993,42 +1045,53 @@
 
             <div class="decor-line decor-right"></div>
 
+
             <div class="content scroll-content">
 
                 <div class="eyebrow">
                     THE WORLD OF REAWAKENING
                 </div>
 
+
                 <h2>
                     LORE
                 </h2>
 
-                <div class="lore-text">
+
+                <div class="lore-main">
 
                     <p>
-                        Humanity and the Awakened once shared
-                        the same world.
+
+                        Humanity and the Awakened once
+                        shared the same world.
+
                     </p>
 
-                    <p>
-                        But when people began to fear those who
-                        possessed supernatural abilities, the
-                        fragile relationship between the two
-                        sides collapsed.
-                    </p>
 
                     <p>
+
+                        But when people began to fear those
+                        who possessed supernatural abilities,
+                        the fragile relationship between the
+                        two sides began to collapse.
+
+                    </p>
+
+
+                    <p>
+
                         The Awakened were hunted.
                         Families were torn apart.
                         And the truth behind the conflict
                         slowly disappeared beneath generations
                         of hatred.
+
                     </p>
 
                 </div>
 
 
-                <div class="lore-divider"></div>
+                <div class="divider"></div>
 
 
                 <div class="factions">
@@ -1045,10 +1108,14 @@
                         </h3>
 
                         <p>
-                            Ordinary people who fear the power
-                            of the Awakened. Some seek safety,
-                            while others believe the Awakened
-                            must be eliminated.
+
+                            Ordinary people who fear the
+                            power of the Awakened.
+
+                            Some seek safety, while others
+                            believe the Awakened must be
+                            eliminated.
+
                         </p>
 
                     </div>
@@ -1065,10 +1132,14 @@
                         </h3>
 
                         <p>
+
                             People born with extraordinary
-                            abilities. Some desire peace,
-                            while others have lost faith in
-                            humanity completely.
+                            abilities.
+
+                            Some desire peace, while others
+                            have completely lost faith in
+                            humanity.
+
                         </p>
 
                     </div>
@@ -1082,9 +1153,9 @@
 
 
 
-        <!-- =========================
+        <!-- ========================================
              GAMEPLAY
-             ========================= -->
+        ======================================== -->
 
         <section id="gameplay">
 
@@ -1092,102 +1163,116 @@
                 04 / 05
             </div>
 
+
             <div class="content scroll-content">
 
-                <div class="gameplay-layout">
+                <div class="eyebrow">
+                    YOUR JOURNEY BEGINS
+                </div>
 
-                    <div class="eyebrow">
-                        YOUR JOURNEY BEGINS
-                    </div>
 
-                    <h2>
-                        GAMEPLAY
-                    </h2>
+                <h2>
+                    GAMEPLAY
+                </h2>
 
-                    <p class="gameplay-description">
-                        Explore the world, uncover forgotten memories
-                        and discover the truth behind the conflict
-                        between Humans and the Awakened.
+
+                <div class="gameplay-intro">
+
+                    <p>
+
+                        Explore the world, uncover forgotten
+                        memories and discover the truth behind
+                        the conflict between Humans and the
+                        Awakened.
+
                     </p>
 
+                </div>
 
-                    <div class="features">
+
+                <div class="features">
 
 
-                        <div class="feature">
+                    <div class="feature">
 
-                            <div class="feature-number">
-                                01
-                            </div>
-
-                            <h3>
-                                STORY
-                            </h3>
-
-                            <p>
-                                A story-driven adventure where
-                                every character has their own
-                                memories and secrets.
-                            </p>
-
+                        <div class="feature-number">
+                            01
                         </div>
 
+                        <h3>
+                            STORY
+                        </h3>
 
-                        <div class="feature">
+                        <p>
 
-                            <div class="feature-number">
-                                02
-                            </div>
+                            Experience a story-driven adventure
+                            where every character has their own
+                            memories, secrets and motives.
 
-                            <h3>
-                                EXPLORATION
-                            </h3>
-
-                            <p>
-                                Explore different locations and
-                                discover pieces of a forgotten past.
-                            </p>
-
-                        </div>
-
-
-                        <div class="feature">
-
-                            <div class="feature-number">
-                                03
-                            </div>
-
-                            <h3>
-                                COMBAT
-                            </h3>
-
-                            <p>
-                                Fight enemies using unique abilities,
-                                strategies and different powers.
-                            </p>
-
-                        </div>
-
-
-                        <div class="feature">
-
-                            <div class="feature-number">
-                                04
-                            </div>
-
-                            <h3>
-                                MEMORIES
-                            </h3>
-
-                            <p>
-                                Recover lost memories and uncover
-                                the truth hidden inside them.
-                            </p>
-
-                        </div>
-
+                        </p>
 
                     </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-number">
+                            02
+                        </div>
+
+                        <h3>
+                            EXPLORATION
+                        </h3>
+
+                        <p>
+
+                            Explore different locations and
+                            discover pieces of a forgotten past.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-number">
+                            03
+                        </div>
+
+                        <h3>
+                            COMBAT
+                        </h3>
+
+                        <p>
+
+                            Fight enemies using unique abilities,
+                            strategies and supernatural powers.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-number">
+                            04
+                        </div>
+
+                        <h3>
+                            MEMORIES
+                        </h3>
+
+                        <p>
+
+                            Recover lost memories and uncover
+                            the truth hidden inside them.
+
+                        </p>
+
+                    </div>
+
 
                 </div>
 
@@ -1197,9 +1282,9 @@
 
 
 
-        <!-- =========================
-             RELEASE
-             ========================= -->
+        <!-- ========================================
+             RELEASE DAY
+        ======================================== -->
 
         <section id="release">
 
@@ -1209,38 +1294,44 @@
 
             <div class="dot dot-two"></div>
 
+
             <div class="content scroll-content">
 
                 <div class="release-label">
                     ESTIMATED RELEASE
                 </div>
 
+
                 <div class="release-year">
                     2027
                 </div>
+
 
                 <div class="status">
                     STATUS: IN DEVELOPMENT
                 </div>
 
+
                 <p class="release-message">
 
-                    ReAwakening: Savior of Memories is still
-                    being developed. The world is growing,
-                    the story is taking shape, and there are
-                    still many memories waiting to be uncovered.
+                    ReAwakening: Savior of Memories is
+                    still being developed.
 
                     <br><br>
 
-                    Until then...
-
-                    <br>
-
-                    <strong>
-                        Don't forget who you are.
-                    </strong>
+                    The world is growing.
+                    The story is taking shape.
+                    And there are still many memories
+                    waiting to be uncovered.
 
                 </p>
+
+
+                <div class="final-line">
+
+                    Don't forget who you are.
+
+                </div>
 
             </div>
 
@@ -1250,106 +1341,84 @@
     </main>
 
 
-    <!-- =========================
+
+    <!-- ========================================
          FOOTER
-         ========================= -->
+    ======================================== -->
 
     <footer>
 
         ReAwakening: Savior of Memories
+
         <br><br>
+
         MADE WITH MEMORY & IMAGINATION
 
     </footer>
 
 
 
-    <!-- =========================
+    <!-- ========================================
          JAVASCRIPT
-         ========================= -->
+    ======================================== -->
 
     <script>
 
         const contents =
             document.querySelectorAll(".scroll-content");
 
-        const leftCharacter =
-            document.querySelector(".character-left");
-
-        const rightCharacter =
-            document.querySelector(".character-right");
-
 
         function updateScroll() {
 
-            const viewportHeight =
-                window.innerHeight;
-
             const viewportCenter =
-                viewportHeight / 2;
+                window.innerHeight / 2;
 
-
-            /* =========================
-               CONTENT FADE
-               ========================= */
 
             contents.forEach(content => {
 
                 const rect =
                     content.getBoundingClientRect();
 
-                const center =
+
+                const elementCenter =
                     rect.top + rect.height / 2;
 
+
                 const distance =
-                    Math.abs(viewportCenter - center);
+                    Math.abs(
+                        viewportCenter -
+                        elementCenter
+                    );
+
 
                 const fadeRange =
-                    viewportHeight * 0.65;
+                    window.innerHeight * 0.65;
+
 
                 let opacity =
-                    1 - distance / fadeRange;
+                    1 -
+                    distance / fadeRange;
+
 
                 opacity =
-                    Math.max(0, Math.min(1, opacity));
+                    Math.max(
+                        0,
+                        Math.min(1, opacity)
+                    );
 
 
                 const movement =
-                    45 * (1 - opacity);
+                    60 * (1 - opacity);
 
 
                 content.style.opacity =
                     opacity;
 
+
                 content.style.transform =
                     `translateY(${movement}px)`;
 
             });
-
-
-
-            /* =========================
-               CHARACTER PARALLAX
-               ========================= */
-
-            const scrollY =
-                window.scrollY;
-
-
-            const leftMovement =
-                Math.sin(scrollY * 0.0025) * 12;
-
-
-            const rightMovement =
-                Math.cos(scrollY * 0.0025) * 12;
-
-
-            leftCharacter.style.transform =
-                `translateY(${leftMovement}px)`;
-
-
-            rightCharacter.style.transform =
-                `translateY(${rightMovement}px)`;
 
         }
 
@@ -1357,7 +1426,9 @@
         window.addEventListener(
             "scroll",
             updateScroll,
-            { passive: true }
+            {
+                passive: true
+            }
         );
 
 
@@ -1373,4 +1444,5 @@
 
 
 </body>
+
 </html>
