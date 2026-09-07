@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>ReAwakening</title>
-
+    <title>ReAwakening: Savior of Memories</title>
 
     <style>
 
-        /* ==================================================
-           RESET
-        ================================================== */
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
 
         * {
             margin: 0;
@@ -30,2036 +23,1095 @@
         }
 
         body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255, 83, 100, 0.12), transparent 30%),
+                radial-gradient(circle at 85% 30%, rgba(93, 222, 255, 0.12), transparent 30%),
+                radial-gradient(circle at 50% 80%, rgba(167, 124, 255, 0.12), transparent 35%),
+                #11101f;
 
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            color: #ffffff;
-
-            background: #17152A;
-
+            color: white;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
 
-
-        /* ==================================================
-           NAVIGATION
-        ================================================== */
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
 
         nav {
-
             position: fixed;
-
             top: 0;
             left: 0;
 
             width: 100%;
-            height: 72px;
+            height: 75px;
 
             display: flex;
-
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
-            gap: 34px;
+            background: rgba(17, 16, 31, 0.72);
+            backdrop-filter: blur(18px);
 
-            background:
-                rgba(18, 16, 36, 0.80);
-
-            backdrop-filter:
-                blur(14px);
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.12);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
 
             z-index: 1000;
         }
 
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: clamp(15px, 3vw, 45px);
+        }
 
         nav a {
+            position: relative;
 
-            font-size: 11px;
+            color: white;
+            text-decoration: none;
 
-            font-weight: bold;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
 
-            letter-spacing: 2px;
-
-            color:
-                rgba(255,255,255,0.78);
-
-            transition:
-                all 0.3s ease;
+            transition: 0.3s ease;
         }
 
+        nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: white;
+
+            transition: 0.3s ease;
+        }
 
         nav a:hover {
+            transform: translateY(-2px);
+        }
 
-            color: #ffffff;
-
-            transform:
-                translateY(-2px);
+        nav a:hover::after {
+            width: 100%;
         }
 
 
-        /* ==================================================
+        /* =========================================================
            SECTIONS
-        ================================================== */
+        ========================================================= */
 
         section {
-
             min-height: 100vh;
 
             padding:
-                120px 6%
+                130px 8%
                 100px;
 
             display: flex;
-
+            align-items: center;
             justify-content: center;
 
-            align-items: center;
-
             position: relative;
+        }
 
-            overflow: visible;
+        .section-inner {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
         }
 
 
-        /* ==================================================
-           BACKGROUNDS
-        ================================================== */
-
-        #welcome {
-
-            background:
-
-                radial-gradient(
-                    circle at 18% 25%,
-                    rgba(119,83,255,0.40),
-                    transparent 32%
-                ),
-
-                radial-gradient(
-                    circle at 82% 70%,
-                    rgba(43,213,255,0.25),
-                    transparent 34%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #17152A,
-                    #241B4D,
-                    #162E4A
-                );
-        }
-
-
-        #about {
-
-            background:
-
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(255,81,137,0.28),
-                    transparent 32%
-                ),
-
-                radial-gradient(
-                    circle at 15% 80%,
-                    rgba(160,74,255,0.18),
-                    transparent 35%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #24172F,
-                    #351A3C
-                );
-        }
-
-
-        #lore {
-
-            background:
-
-                radial-gradient(
-                    circle at 18% 70%,
-                    rgba(0,231,211,0.24),
-                    transparent 32%
-                ),
-
-                radial-gradient(
-                    circle at 82% 25%,
-                    rgba(65,120,255,0.20),
-                    transparent 35%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #102A35,
-                    #142C49
-                );
-        }
-
-
-        #arc {
-
-            background:
-
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(255,80,100,0.15),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(130,90,255,0.18),
-                    transparent 35%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #171525,
-                    #241832,
-                    #17263A
-                );
-        }
-
-
-        #gameplay {
-
-            background:
-
-                radial-gradient(
-                    circle at 80% 25%,
-                    rgba(255,135,52,0.28),
-                    transparent 32%
-                ),
-
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(255,216,67,0.18),
-                    transparent 32%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #352017,
-                    #3B2818
-                );
-        }
-
-
-        #release {
-
-            background:
-
-                radial-gradient(
-                    circle at 50% 25%,
-                    rgba(166,90,255,0.35),
-                    transparent 35%
-                ),
-
-                radial-gradient(
-                    circle at 20% 75%,
-                    rgba(255,89,154,0.16),
-                    transparent 30%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #21162F,
-                    #14142A
-                );
-        }
-
-
-        /* ==================================================
-           SECTION NUMBER
-        ================================================== */
-
-        .section-number {
-
-            position: absolute;
-
-            top: 105px;
-
-            right: 7%;
-
-            font-size: 11px;
-
-            letter-spacing: 4px;
-
-            color:
-                rgba(255,255,255,0.42);
-        }
-
-
-        /* ==================================================
-           CONTENT
-        ================================================== */
-
-        .content {
-
-            width:
-                min(1100px, 94%);
-
-            padding:
-                60px 70px;
-
-            background:
-                rgba(255,255,255,0.055);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.14);
-
-            border-radius:
-                8px;
-
-            box-shadow:
-                0 25px 70px
-                rgba(0,0,0,0.28);
-
-            backdrop-filter:
-                blur(10px);
-
-            text-align:
-                center;
-
-            position:
-                relative;
-        }
-
-
-        /* ==================================================
-           SCROLL ANIMATION
-        ================================================== */
+        /* =========================================================
+           SCROLL CONTENT
+        ========================================================= */
 
         .scroll-content {
-
             opacity: 0;
-
-            transform:
-                translateY(60px);
+            transform: translateY(60px);
 
             transition:
-                opacity 0.25s linear,
-                transform 0.25s linear;
+                opacity 0.35s ease,
+                transform 0.35s ease;
         }
 
 
-        /* ==================================================
-           GENERAL TEXT
-        ================================================== */
-
-        .eyebrow {
-
-            font-size: 11px;
-
-            letter-spacing: 5px;
-
-            font-weight: bold;
-
-            color:
-                rgba(255,255,255,0.58);
-
-            margin-bottom:
-                18px;
-        }
-
-
-        h1 {
-
-            font-size:
-                clamp(50px, 7.8vw, 110px);
-
-            line-height:
-                1;
-
-            letter-spacing:
-                4px;
-
-            margin-bottom:
-                22px;
-
-            white-space:
-                nowrap;
-
-            display:
-                inline-block;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #8175FF,
-                    #54DFFF,
-                    #A99BFF,
-                    #FF79AA,
-                    #FF9E5A,
-                    #FFD05A
-                );
-
-            -webkit-background-clip:
-                text;
-
-            -webkit-text-fill-color:
-                transparent;
-
-            background-clip:
-                text;
-        }
-
-
-        h2 {
-
-            font-size:
-                clamp(40px, 6vw, 70px);
-
-            letter-spacing:
-                5px;
-
-            margin-bottom:
-                25px;
-
-            color:
-                #ffffff;
-        }
-
-
-        h3 {
-
-            font-size:
-                18px;
-
-            letter-spacing:
-                2px;
-
-            margin-bottom:
-                10px;
-
-            color:
-                #ffffff;
-        }
-
-
-        p {
-
-            font-size:
-                15px;
-
-            line-height:
-                1.8;
-
-            color:
-                rgba(255,255,255,0.72);
-        }
-
-
-        /* ==================================================
+        /* =========================================================
            WELCOME
-        ================================================== */
+        ========================================================= */
 
-        #welcome .content {
+        #welcome {
+            min-height: 100vh;
 
-            background:
-                transparent;
-
-            border:
-                none;
-
-            box-shadow:
-                none;
-
-            backdrop-filter:
-                none;
-
-            max-width:
-                1150px;
-        }
-
-
-        .subtitle {
-
-            font-size:
-                19px;
-
-            letter-spacing:
-                7px;
-
-            color:
-                #5DDEFF;
-
-            margin-bottom:
-                25px;
-        }
-
-
-        .welcome-line {
-
-            width:
-                150px;
-
-            height:
-                2px;
-
-            margin:
-                30px auto;
+            text-align: center;
 
             background:
-
-                linear-gradient(
-                    90deg,
-                    #8175FF,
-                    #5DDEFF,
-                    #FF79AA
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,0.06),
+                    transparent 55%
                 );
         }
-
-
-        .welcome-text {
-
-            font-size:
-                17px;
-
-            line-height:
-                1.8;
-
-            color:
-                rgba(255,255,255,0.82);
-        }
-
 
         .welcome-small {
+            font-size: 15px;
+            letter-spacing: 5px;
+            font-weight: 700;
 
-            margin-top:
-                25px;
+            margin-bottom: 25px;
 
-            font-size:
-                10px;
-
-            letter-spacing:
-                4px;
-
-            color:
-                rgba(255,255,255,0.45);
+            opacity: 0.75;
         }
 
+        .game-title {
+            font-size: clamp(42px, 7vw, 105px);
 
-        .enter-button {
+            font-weight: 1000;
+            line-height: 0.95;
 
-            display:
-                inline-block;
+            letter-spacing: -3px;
 
-            margin-top:
-                30px;
-
-            padding:
-                15px 38px;
-
-            border:
-                1px solid
-                rgba(93,222,255,0.7);
-
-            border-radius:
-                3px;
-
-            font-size:
-                11px;
-
-            letter-spacing:
-                3px;
-
-            color:
-                #5DDEFF;
-
-            transition:
-                all 0.3s ease;
-        }
-
-
-        .enter-button:hover {
+            max-width: 1200px;
+            margin: 0 auto 30px;
 
             background:
-                rgba(93,222,255,0.12);
-
-            border-color:
-                #5DDEFF;
-
-            color:
-                #ffffff;
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 0 25px
-                rgba(93,222,255,0.2);
-        }
-
-
-        /* ==================================================
-           DECORATIONS
-        ================================================== */
-
-        .decor-line {
-
-            position:
-                absolute;
-
-            width:
-                1px;
-
-            height:
-                130px;
-
-            background:
-
-                linear-gradient(
-                    transparent,
-                    rgba(255,255,255,0.45),
-                    transparent
-                );
-        }
-
-
-        .decor-left {
-
-            left:
-                8%;
-
-            top:
-                30%;
-        }
-
-
-        .decor-right {
-
-            right:
-                8%;
-
-            bottom:
-                30%;
-        }
-
-
-        .dot {
-
-            position:
-                absolute;
-
-            width:
-                7px;
-
-            height:
-                7px;
-
-            border-radius:
-                50%;
-        }
-
-
-        .dot-one {
-
-            top:
-                25%;
-
-            left:
-                14%;
-
-            background:
-                #5DDEFF;
-
-            box-shadow:
-                0 0 18px
-                #5DDEFF;
-        }
-
-
-        .dot-two {
-
-            bottom:
-                20%;
-
-            right:
-                14%;
-
-            background:
-                #FF79AA;
-
-            box-shadow:
-                0 0 18px
-                #FF79AA;
-        }
-
-
-        /* ==================================================
-           ABOUT US
-        ================================================== */
-
-        .about-intro {
-
-            max-width:
-                760px;
-
-            margin:
-                auto;
-        }
-
-
-        .about-intro p {
-
-            margin-bottom:
-                18px;
-        }
-
-
-        .divider {
-
-            width:
-                100%;
-
-            height:
-                1px;
-
-            margin:
-                35px 0;
-
-            background:
-
                 linear-gradient(
                     90deg,
-                    transparent,
-                    rgba(255,255,255,0.25),
-                    transparent
+                    #ff5364,
+                    #ff9b45,
+                    #ffd75a,
+                    #65d99b,
+                    #5ddeff,
+                    #668cff,
+                    #a77cff
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .welcome-subtitle {
+            max-width: 750px;
+            margin: auto;
+
+            font-size: clamp(16px, 2vw, 21px);
+
+            line-height: 1.7;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .scroll-hint {
+            margin-top: 70px;
+
+            font-size: 12px;
+            letter-spacing: 4px;
+
+            opacity: 0.45;
+        }
+
+
+        /* =========================================================
+           SECTION TITLES
+        ========================================================= */
+
+        .section-title {
+            text-align: center;
+
+            font-size: clamp(40px, 6vw, 75px);
+
+            font-weight: 1000;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 25px;
+        }
+
+        .section-description {
+            max-width: 750px;
+
+            margin: 0 auto 70px;
+
+            text-align: center;
+
+            color: rgba(255,255,255,0.68);
+
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           ABOUT US
+        ========================================================= */
+
+        #about {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,83,100,0.06),
+                    rgba(93,222,255,0.05)
                 );
         }
 
+        .about-box {
+            max-width: 900px;
 
-        /* ==================================================
-           CREDITS
-        ================================================== */
+            margin: auto;
 
-        .credits {
+            padding: 55px;
 
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-            gap:
-                15px;
-
-            text-align:
-                left;
-        }
-
-
-        .credit-card {
-
-            padding:
-                22px;
-
-            background:
-                rgba(255,255,255,0.05);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
-
-            border-radius:
-                5px;
-
-            transition:
-                all 0.3s ease;
-        }
-
-
-        .credit-card:hover {
-
-            transform:
-                translateY(-5px);
-
-            background:
-                rgba(255,255,255,0.09);
-        }
-
-
-        .credit-title {
-
-            font-size:
-                10px;
-
-            letter-spacing:
-                3px;
-
-            color:
-                rgba(255,255,255,0.45);
-
-            margin-bottom:
-                8px;
-        }
-
-
-        .credit-name {
-
-            font-size:
-                15px;
-
-            font-weight:
-                bold;
-
-            color:
-                #ffffff;
-        }
-
-
-        /* ==================================================
-           LORE
-        ================================================== */
-
-        .lore-main {
-
-            max-width:
-                780px;
-
-            margin:
-                auto;
-
-            text-align:
-                left;
-        }
-
-
-        .lore-main p {
-
-            margin-bottom:
-                20px;
-        }
-
-
-        /* ==================================================
-           FACTIONS
-        ================================================== */
-
-        .factions {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-            gap:
-                18px;
-
-            margin-top:
-                25px;
-        }
-
-
-        .faction {
-
-            padding:
-                28px;
-
-            text-align:
-                left;
-
-            background:
-                rgba(255,255,255,0.05);
-
-            border:
-                1px solid
-                rgba(255,255,255,0.13);
-
-            border-radius:
-                5px;
-
-            transition:
-                all 0.3s ease;
-        }
-
-
-        .faction:hover {
-
-            transform:
-                translateY(-5px);
-
-            background:
-                rgba(255,255,255,0.08);
-        }
-
-
-        .faction:first-child {
-
-            border-top:
-                2px solid
-                #5DDEFF;
-        }
-
-
-        .faction:last-child {
-
-            border-top:
-                2px solid
-                #FF5D78;
-        }
-
-
-        .faction-symbol {
-
-            font-size:
-                27px;
-
-            margin-bottom:
-                12px;
-        }
-
-
-        .faction:first-child
-        .faction-symbol {
-
-            color:
-                #5DDEFF;
-        }
-
-
-        .faction:last-child
-        .faction-symbol {
-
-            color:
-                #FF5D78;
-        }
-
-
-        .faction h3 {
-
-            letter-spacing:
-                3px;
-
-            font-size:
-                17px;
-        }
-
-
-        .faction p {
-
-            font-size:
-                13px;
-
-            line-height:
-                1.7;
-        }
-
-
-        /* ==================================================
-           ARC SECTION
-        ================================================== */
-
-        .arc-description {
-
-            max-width:
-                700px;
-
-            margin:
-                0 auto 35px;
-        }
-
-
-        .arc-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap:
-                18px;
-
-            text-align:
-                left;
-        }
-
-
-        /* ==================================================
-           ARC CARD
-        ================================================== */
-
-        .arc-card {
-
-            position:
-                relative;
-
-            padding:
-                30px 25px;
-
-            min-height:
-                150px;
+            border-radius: 30px;
 
             background:
                 rgba(255,255,255,0.045);
 
             border:
-                1px solid
-                rgba(255,255,255,0.14);
+                1px solid rgba(255,255,255,0.1);
 
-            border-radius:
-                7px;
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.25);
+        }
 
-            cursor:
-                pointer;
+        .about-box p {
+            font-size: 18px;
+            line-height: 2;
 
-            transition:
-                all 0.35s ease;
+            color: rgba(255,255,255,0.75);
 
-            overflow:
-                hidden;
+            text-align: center;
         }
 
 
-        .arc-card::before {
+        /* =========================================================
+           LORE
+        ========================================================= */
 
+        #lore {
+            background:
+                radial-gradient(
+                    circle at 30% 50%,
+                    rgba(167,124,255,0.12),
+                    transparent 40%
+                );
+        }
+
+        .lore-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .lore-card {
+            padding: 45px 35px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lore-card::before {
             content: "";
 
-            position:
-                absolute;
+            position: absolute;
 
             top: 0;
             left: 0;
 
             width: 100%;
-            height: 3px;
+            height: 4px;
 
             background:
-                var(--arc-color);
+                linear-gradient(
+                    90deg,
+                    #ff5364,
+                    #a77cff,
+                    #5ddeff
+                );
         }
 
+        .lore-card:hover {
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(255,255,255,0.25);
+        }
+
+        .lore-card h3 {
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+        .lore-card p {
+            line-height: 1.8;
+
+            color: rgba(255,255,255,0.68);
+        }
+
+
+        /* =========================================================
+           ARC
+        ========================================================= */
+
+        #arc {
+            background:
+                radial-gradient(
+                    circle at 70% 40%,
+                    rgba(255,215,90,0.09),
+                    transparent 35%
+                );
+        }
+
+        .arc-grid {
+
+            width: 100%;
+            max-width: 750px;
+
+            margin: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        /* =========================================================
+           ARC CARD
+        ========================================================= */
+
+        .arc-card {
+
+            --arc-color: white;
+
+            width: 100%;
+
+            padding: 28px 30px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .arc-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 5px;
+            height: 100%;
+
+            background: var(--arc-color);
+
+            box-shadow:
+                0 0 20px var(--arc-color);
+        }
 
         .arc-card:hover {
 
-            transform:
-                translateY(-7px);
+            transform: translateX(8px);
 
             background:
-                rgba(255,255,255,0.08);
+                rgba(255,255,255,0.07);
 
             border-color:
                 var(--arc-color);
-
-            box-shadow:
-                0 12px 30px
-                rgba(0,0,0,0.2);
         }
 
+
+        /* =========================================================
+           ARC COLORS
+        ========================================================= */
+
+        .arc-1 {
+            --arc-color: #ff5364;
+        }
+
+        .arc-2 {
+            --arc-color: #5ddeff;
+        }
+
+        .arc-3 {
+            --arc-color: #ff9b45;
+        }
+
+        .arc-4 {
+            --arc-color: #668cff;
+        }
+
+        .arc-5 {
+            --arc-color: #a77cff;
+        }
+
+        .arc-6 {
+            --arc-color: #65d99b;
+        }
+
+        .arc-7 {
+            --arc-color: #ffd75a;
+        }
+
+
+        /* =========================================================
+           ARC HEADER
+        ========================================================= */
+
+        .arc-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
 
         .arc-number {
 
-            font-size:
-                10px;
+            font-size: 28px;
 
-            letter-spacing:
-                4px;
+            font-weight: 1000;
 
-            color:
-                rgba(255,255,255,0.45);
+            color: var(--arc-color);
 
-            margin-bottom:
-                10px;
+            letter-spacing: 2px;
         }
-
-
-        .arc-title {
-
-            font-size:
-                25px;
-
-            letter-spacing:
-                3px;
-
-            color:
-                var(--arc-color);
-
-            margin-bottom:
-                8px;
-        }
-
 
         .arc-name {
 
-            font-size:
-                12px;
+            margin-top: 8px;
 
-            letter-spacing:
-                2px;
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color:
+                rgba(255,255,255,0.55);
+        }
+
+        .arc-arrow {
+
+            font-size: 22px;
+
+            color: var(--arc-color);
+
+            transition:
+                transform 0.3s ease;
+        }
+
+        .arc-card.active .arc-arrow {
+
+            transform:
+                rotate(180deg);
+        }
+
+
+        /* =========================================================
+           CHAPTER LIST
+        ========================================================= */
+
+        .chapter-list {
+
+            max-height: 0;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            margin-top: 0;
+
+            transition:
+                max-height 0.5s ease,
+                opacity 0.35s ease,
+                margin 0.35s ease;
+        }
+
+        .arc-card.active .chapter-list {
+
+            max-height: 700px;
+
+            opacity: 1;
+
+            margin-top: 25px;
+        }
+
+        .chapter {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px 18px;
+
+            margin-bottom: 9px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(0,0,0,0.2);
+
+            border:
+                1px solid rgba(255,255,255,0.06);
+
+            color:
+                rgba(255,255,255,0.72);
+
+            font-size: 14px;
+
+            transition:
+                0.25s ease;
+        }
+
+        .chapter:hover {
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border-color:
+                var(--arc-color);
+        }
+
+        .chapter-number {
+
+            font-weight: 800;
+
+            color: var(--arc-color);
+        }
+
+        .chapter-lock {
+
+            font-size: 16px;
+
+            opacity: 0.6;
+        }
+
+
+        /* =========================================================
+           GAMEPLAY
+        ========================================================= */
+
+        #gameplay {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(102,140,255,0.08),
+                    rgba(101,217,155,0.05)
+                );
+        }
+
+        .gameplay-box {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            text-align: center;
+
+            padding: 70px 50px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+        }
+
+        .gameplay-box h3 {
+
+            font-size: 35px;
+
+            margin-bottom: 25px;
+        }
+
+        .gameplay-box p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color:
+                rgba(255,255,255,0.68);
+
+            line-height: 1.9;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           RELEASE DAY
+        ========================================================= */
+
+        #release {
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,215,90,0.09),
+                    transparent 50%
+                );
+        }
+
+        .release-title {
+
+            font-size:
+                clamp(45px, 8vw, 100px);
+
+            font-weight: 1000;
+
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffd75a,
+                    #ff9b45,
+                    #ff5364
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .release-text {
+
+            font-size: 20px;
 
             color:
                 rgba(255,255,255,0.65);
         }
 
 
-        .arc-arrow {
+        /* =========================================================
+           CREDITS
+        ========================================================= */
 
-            position:
-                absolute;
+        .credits {
 
-            right:
-                22px;
+            margin-top: 90px;
 
-            bottom:
-                22px;
-
-            font-size:
-                18px;
-
-            color:
-                rgba(255,255,255,0.4);
-
-            transition:
-                transform 0.3s ease;
-        }
-
-
-        .arc-card.active
-        .arc-arrow {
-
-            transform:
-                rotate(180deg);
-
-            color:
-                var(--arc-color);
-        }
-
-
-        /* ==================================================
-           CHAPTER LIST
-        ================================================== */
-
-        .chapter-list {
-
-            max-height:
-                0;
-
-            overflow:
-                hidden;
-
-            opacity:
-                0;
-
-            margin-top:
-                0;
-
-            transition:
-                max-height 0.45s ease,
-                opacity 0.35s ease,
-                margin 0.35s ease;
-        }
-
-
-        .arc-card.active
-        .chapter-list {
-
-            max-height:
-                500px;
-
-            opacity:
-                1;
-
-            margin-top:
-                25px;
-        }
-
-
-        .chapter {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            padding:
-                13px 0;
+            padding-top: 45px;
 
             border-top:
-                1px solid
-                rgba(255,255,255,0.10);
+                1px solid rgba(255,255,255,0.08);
 
-            font-size:
-                12px;
+            text-align: center;
+        }
 
-            letter-spacing:
-                1px;
+        .credits h3 {
+
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            opacity: 0.45;
+
+            margin-bottom: 30px;
+        }
+
+        .credit-line {
+
+            margin: 10px 0;
 
             color:
-                rgba(255,255,255,0.58);
+                rgba(255,255,255,0.7);
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
         }
 
+        .credit-line span {
 
-        .chapter-left {
+            color: white;
 
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            gap:
-                12px;
+            font-weight: 800;
         }
 
+        .final-message {
 
-        .chapter-number {
+            margin-top: 45px;
 
-            font-size:
-                9px;
+            font-size: 12px;
 
-            letter-spacing:
-                2px;
+            line-height: 1.7;
 
             color:
                 rgba(255,255,255,0.35);
+
+            font-style: italic;
         }
 
 
-        .lock {
-
-            font-size:
-                14px;
-
-            filter:
-                grayscale(0.2);
-        }
-
-
-        /* ==================================================
-           ARC COLORS
-        ================================================== */
-
-        .arc-1 {
-            --arc-color: #FF5364;
-        }
-
-        .arc-2 {
-            --arc-color: #5DDEFF;
-        }
-
-        .arc-3 {
-            --arc-color: #FF9B45;
-        }
-
-        .arc-4 {
-            --arc-color: #668CFF;
-        }
-
-        .arc-5 {
-            --arc-color: #A77CFF;
-        }
-
-        .arc-6 {
-            --arc-color: #65D99B;
-        }
-
-        .arc-7 {
-            --arc-color: #FFD75A;
-        }
-
-
-        /* ==================================================
-           GAMEPLAY
-        ================================================== */
-
-        .gameplay-intro {
-
-            max-width:
-                720px;
-
-            margin:
-                auto auto 35px;
-        }
-
-
-        .features {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-            gap:
-                15px;
-
-            text-align:
-                left;
-        }
-
-
-        .feature {
-
-            padding:
-                25px;
-
-            background:
-                rgba(255,255,255,0.05);
-
-            border-left:
-                3px solid
-                #FF9B45;
-
-            transition:
-                all 0.3s ease;
-        }
-
-
-        .feature:nth-child(2) {
-
-            border-left-color:
-                #5DDEFF;
-        }
-
-
-        .feature:nth-child(3) {
-
-            border-left-color:
-                #FF5D78;
-        }
-
-
-        .feature:nth-child(4) {
-
-            border-left-color:
-                #A77CFF;
-        }
-
-
-        .feature:hover {
-
-            transform:
-                translateX(7px);
-
-            background:
-                rgba(255,255,255,0.09);
-        }
-
-
-        .feature-number {
-
-            font-size:
-                10px;
-
-            letter-spacing:
-                3px;
-
-            opacity:
-                0.5;
-
-            margin-bottom:
-                10px;
-        }
-
-
-        .feature h3 {
-
-            font-size:
-                16px;
-
-            letter-spacing:
-                2px;
-        }
-
-
-        .feature p {
-
-            font-size:
-                13px;
-
-            line-height:
-                1.7;
-        }
-
-
-        /* ==================================================
-           RELEASE
-        ================================================== */
-
-        #release .content {
-
-            background:
-                transparent;
-
-            border:
-                none;
-
-            box-shadow:
-                none;
-
-            backdrop-filter:
-                none;
-        }
-
-
-        .release-label {
-
-            font-size:
-                11px;
-
-            letter-spacing:
-                5px;
-
-            color:
-                rgba(255,255,255,0.55);
-
-            margin-bottom:
-                20px;
-        }
-
-
-        .release-year {
-
-            font-size:
-                clamp(80px,16vw,175px);
-
-            line-height:
-                0.9;
-
-            letter-spacing:
-                10px;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    #FF79AA,
-                    #A77CFF,
-                    #5DDEFF
-                );
-
-            -webkit-background-clip:
-                text;
-
-            -webkit-text-fill-color:
-                transparent;
-
-            background-clip:
-                text;
-
-            margin-bottom:
-                30px;
-        }
-
-
-        .status {
-
-            display:
-                inline-block;
-
-            padding:
-                10px 20px;
-
-            border:
-                1px solid
-                #A77CFF;
-
-            color:
-                #C9B8FF;
-
-            font-size:
-                10px;
-
-            letter-spacing:
-                3px;
-
-            margin-bottom:
-                30px;
-        }
-
-
-        .release-message {
-
-            max-width:
-                650px;
-
-            margin:
-                auto;
-        }
-
-
-        .final-line {
-
-            margin-top:
-                30px;
-
-            font-size:
-                18px;
-
-            letter-spacing:
-                2px;
-
-            color:
-                #FF79AA;
-        }
-
-
-        /* ==================================================
-           FOOTER
-        ================================================== */
-
-        footer {
-
-            padding:
-                40px 20px;
-
-            text-align:
-                center;
-
-            background:
-                #100F1E;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,0.12);
-
-            font-size:
-                10px;
-
-            letter-spacing:
-                3px;
-
-            color:
-                rgba(255,255,255,0.45);
-        }
-
-
-        /* ==================================================
-           TABLET
-        ================================================== */
-
-        @media (max-width: 950px) {
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 800px) {
 
             nav {
+                height: 65px;
 
-                gap:
-                    22px;
+                overflow-x: auto;
+
+                justify-content: flex-start;
             }
 
-
-            .content {
-
-                width:
-                    96%;
+            nav ul {
+                min-width: max-content;
 
                 padding:
-                    50px 45px;
+                    0 20px;
+
+                gap: 22px;
             }
-
-
-            .arc-grid {
-
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
-
-
-            h1 {
-
-                font-size:
-                    clamp(45px,8vw,80px);
-            }
-
-        }
-
-
-        /* ==================================================
-           MOBILE
-        ================================================== */
-
-        @media (max-width: 700px) {
-
-            nav {
-
-                height:
-                    60px;
-
-                gap:
-                    10px;
-
-                padding:
-                    0 10px;
-            }
-
 
             nav a {
-
-                font-size:
-                    7px;
-
-                letter-spacing:
-                    1px;
+                font-size: 10px;
             }
-
 
             section {
 
                 padding:
-                    100px 20px 70px;
+                    110px 6%
+                    80px;
             }
 
-
-            .content {
-
-                width:
-                    100%;
-
-                padding:
-                    40px 22px;
-            }
-
-
-            .section-number {
-
-                top:
-                    75px;
-
-                right:
-                    20px;
-            }
-
-
-            h1 {
-
-                font-size:
-                    43px;
+            .game-title {
 
                 letter-spacing:
-                    2px;
+                    -1px;
 
-                white-space:
-                    normal;
+                line-height:
+                    1;
             }
 
-
-            h2 {
-
-                font-size:
-                    34px;
-
-                letter-spacing:
-                    3px;
-            }
-
-
-            .subtitle {
-
-                font-size:
-                    12px;
-
-                letter-spacing:
-                    3px;
-            }
-
-
-            p {
-
-                font-size:
-                    14px;
-            }
-
-
-            .credits,
-            .factions,
-            .features,
-            .arc-grid {
+            .lore-grid {
 
                 grid-template-columns:
                     1fr;
             }
 
+            .about-box {
+
+                padding: 35px 25px;
+            }
+
+            .gameplay-box {
+
+                padding: 45px 25px;
+            }
 
             .arc-card {
 
-                min-height:
-                    140px;
+                padding:
+                    23px 22px;
             }
 
+            .arc-number {
 
-            .decor-line,
-            .dot {
-
-                display:
-                    none;
+                font-size: 22px;
             }
 
+            .arc-name {
 
-            .release-year {
+                font-size: 11px;
 
-                font-size:
-                    90px;
+                letter-spacing: 2px;
+            }
+        }
 
-                letter-spacing:
-                    5px;
+
+        @media (max-width: 500px) {
+
+            .welcome-small {
+
+                font-size: 11px;
+
+                letter-spacing: 3px;
             }
 
+            .section-title {
+
+                font-size: 42px;
+            }
+
+            .section-description {
+
+                font-size: 15px;
+            }
+
+            .arc-header {
+
+                gap: 10px;
+            }
+
+            .arc-arrow {
+
+                font-size: 18px;
+            }
         }
 
     </style>
-
 </head>
 
 
 <body>
 
 
-    <!-- ==================================================
+    <!-- =========================================================
          NAVIGATION
-    ================================================== -->
+    ========================================================== -->
 
     <nav>
 
-        <a href="#welcome">
-            WELCOME
-        </a>
+        <ul>
 
-        <a href="#about">
-            ABOUT US
-        </a>
+            <li>
+                <a href="#welcome">
+                    WELCOME
+                </a>
+            </li>
 
-        <a href="#lore">
-            LORE
-        </a>
+            <li>
+                <a href="#about">
+                    ABOUT US
+                </a>
+            </li>
 
-        <a href="#arc">
-            ARC
-        </a>
+            <li>
+                <a href="#lore">
+                    LORE
+                </a>
+            </li>
 
-        <a href="#gameplay">
-            GAMEPLAY
-        </a>
+            <li>
+                <a href="#arc">
+                    ARC
+                </a>
+            </li>
 
-        <a href="#release">
-            RELEASE DAY
-        </a>
+            <li>
+                <a href="#gameplay">
+                    GAMEPLAY
+                </a>
+            </li>
+
+            <li>
+                <a href="#release">
+                    RELEASE DAY
+                </a>
+            </li>
+
+        </ul>
 
     </nav>
 
 
 
-    <!-- ==================================================
-         MAIN
-    ================================================== -->
+    <!-- =========================================================
+         WELCOME
+    ========================================================== -->
 
-    <main>
+    <section id="welcome">
 
+        <div class="section-inner">
 
-        <!-- ==================================================
-             WELCOME
-        ================================================== -->
-
-        <section id="welcome">
-
-            <div class="section-number">
-                01 / 06
-            </div>
-
-
-            <div class="decor-line decor-left"></div>
-
-
-            <div class="dot dot-one"></div>
-
-
-            <div class="content scroll-content">
-
-                <div class="eyebrow">
-
-                    A STORY-DRIVEN INDIE RPG
-
-                </div>
-
-
-                <h1>
-
-                    ReAwakening
-
-                </h1>
-
-
-                <div class="subtitle">
-
-                    SAVIOR OF MEMORIES
-
-                </div>
-
-
-                <div class="welcome-line"></div>
-
-
-                <p class="welcome-text">
-
-                    Every memory hides a truth.<br>
-
-                    Every truth has a price.
-
-                </p>
-
-
-                <a
-                    href="#about"
-                    class="enter-button"
-                >
-
-                    ENTER THE WORLD
-
-                </a>
-
+            <div class="scroll-content">
 
                 <div class="welcome-small">
-
-                    MEMORY • IDENTITY • TRUTH
-
+                    WELCOME TO
                 </div>
 
-            </div>
+                <h1 class="game-title">
+                    ReAwakening
+                </h1>
 
-        </section>
+                <p class="welcome-subtitle">
+                    Savior of Memories
+                </p>
 
+                <p class="welcome-subtitle"
+                   style="margin-top: 20px;">
 
-
-        <!-- ==================================================
-             ABOUT US
-        ================================================== -->
-
-        <section id="about">
-
-            <div class="section-number">
-                02 / 06
-            </div>
-
-
-            <div class="content scroll-content">
-
-                <div class="eyebrow">
-
-                    THE PEOPLE BEHIND THE WORLD
-
-                </div>
-
-
-                <h2>
-
-                    ABOUT US
-
-                </h2>
-
-
-                <div class="about-intro">
-
-                    <p>
-
-                        ReAwakening is a small indie game
-                        created by young creators who love
-                        storytelling, art, music and game
-                        development.
-
-                    </p>
-
-
-                    <p>
-
-                        What started as a simple idea slowly
-                        became a world filled with characters,
-                        memories, conflicts and unanswered
-                        questions.
-
-                    </p>
-
-                </div>
-
-
-                <div class="divider"></div>
-
-
-                <div class="credits">
-
-
-                    <div class="credit-card">
-
-                        <div class="credit-title">
-                            THE OWNER
-                        </div>
-
-                        <div class="credit-name">
-                            Y & Mr. P
-                        </div>
-
-                    </div>
-
-
-                    <div class="credit-card">
-
-                        <div class="credit-title">
-                            ART
-                        </div>
-
-                        <div class="credit-name">
-                            Y & NutellaGuy
-                        </div>
-
-                    </div>
-
-
-                    <div class="credit-card">
-
-                        <div class="credit-title">
-                            MUSIC
-                        </div>
-
-                        <div class="credit-name">
-                            Y
-                        </div>
-
-                    </div>
-
-
-                    <div class="credit-card">
-
-                        <div class="credit-title">
-                            CODING
-                        </div>
-
-                        <div class="credit-name">
-                            Mr. P, 5G & Y
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <p style="
-                    margin-top:30px;
-                    font-size:12px;
-                    letter-spacing:1px;
-                    opacity:0.65;
-                ">
-
-                    A game made by young creators,
-                    aged 12–13, with nothing but passion
-                    and imagination.
+                    A story about memories,
+                    identity, conflict,
+                    and the truth hidden within.
 
                 </p>
 
-            </div>
-
-        </section>
-
-
-
-        <!-- ==================================================
-             LORE
-        ================================================== -->
-
-        <section id="lore">
-
-            <div class="section-number">
-                03 / 06
-            </div>
-
-
-            <div class="decor-line decor-right"></div>
-
-
-            <div class="content scroll-content">
-
-                <div class="eyebrow">
-
-                    THE WORLD OF REAWAKENING
-
+                <div class="scroll-hint">
+                    SCROLL TO EXPLORE
                 </div>
 
+            </div>
 
-                <h2>
+        </div>
 
-                    LORE
+    </section>
 
+
+
+    <!-- =========================================================
+         ABOUT US
+    ========================================================== -->
+
+    <section id="about">
+
+        <div class="section-inner">
+
+            <div class="scroll-content">
+
+                <h2 class="section-title">
+                    ABOUT US
                 </h2>
 
+                <p class="section-description">
 
-                <div class="lore-main">
+                    ReAwakening: Savior of Memories
+                    is an independent game created
+                    from passion, imagination,
+                    and a love for storytelling.
 
-                    <p>
-
-                        Humanity and the Awakened once
-                        shared the same world.
-
-                    </p>
+                </p>
 
 
-                    <p>
-
-                        But when people began to fear those
-                        who possessed supernatural abilities,
-                        the fragile relationship between the
-                        two sides began to collapse.
-
-                    </p>
-
+                <div class="about-box">
 
                     <p>
 
-                        The Awakened were hunted.
-                        Families were torn apart.
-                        And the truth behind the conflict
-                        slowly disappeared beneath generations
-                        of hatred.
+                        We are a small group of young creators
+                        building our own world from scratch.
+
+                        <br><br>
+
+                        From the characters and lore
+                        to the music, coding, and visual design,
+                        every part of the game is made
+                        with our own ideas and creativity.
+
+                        <br><br>
+
+                        This is our story.
+                        And this is where it begins.
 
                     </p>
 
                 </div>
 
+            </div>
 
-                <div class="divider"></div>
+        </div>
+
+    </section>
 
 
-                <div class="factions">
+
+    <!-- =========================================================
+         LORE
+    ========================================================== -->
+
+    <section id="lore">
+
+        <div class="section-inner">
+
+            <div class="scroll-content">
+
+                <h2 class="section-title">
+                    LORE
+                </h2>
+
+                <p class="section-description">
+
+                    A world divided by fear,
+                    power, and forgotten memories.
+
+                </p>
 
 
-                    <div class="faction">
+                <div class="lore-grid">
 
-                        <div class="faction-symbol">
-                            ◇
-                        </div>
 
+                    <div class="lore-card">
 
                         <h3>
                             HUMANS
                         </h3>
 
-
                         <p>
 
-                            Ordinary people who fear the
-                            power of the Awakened.
+                            Humans live in fear of the Awakened.
+                            Their powers are considered dangerous,
+                            leading to conflict between the two sides.
 
-                            Some seek safety, while others
-                            believe the Awakened must be
-                            eliminated.
+                            <br><br>
+
+                            Many believe that the only way
+                            to protect humanity is to eliminate
+                            the Awakened.
 
                         </p>
 
@@ -2067,26 +1119,73 @@
 
 
 
-                    <div class="faction">
-
-                        <div class="faction-symbol">
-                            ✦
-                        </div>
-
+                    <div class="lore-card">
 
                         <h3>
-                            THE AWAKENED
+                            AWAKENED
                         </h3>
-
 
                         <p>
 
-                            People born with extraordinary
-                            abilities.
+                            The Awakened are people
+                            who possess mysterious supernatural abilities.
 
-                            Some desire peace, while others
-                            have completely lost faith in
-                            humanity.
+                            <br><br>
+
+                            Some seek peace.
+                            Others believe humanity can never
+                            accept them.
+
+                            Their existence becomes one of the
+                            biggest mysteries of the world.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="lore-card">
+
+                        <h3>
+                            ASTER
+                        </h3>
+
+                        <p>
+
+                            Aster wakes up without memories
+                            of his past.
+
+                            <br><br>
+
+                            With fragments of a forgotten life
+                            slowly returning,
+                            he begins searching for the truth
+                            behind his identity.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="lore-card">
+
+                        <h3>
+                            THE TRUTH
+                        </h3>
+
+                        <p>
+
+                            Somewhere between Humans
+                            and the Awakened lies a truth
+                            that has been forgotten.
+
+                            <br><br>
+
+                            To uncover it,
+                            Aster must confront the past
+                            he no longer remembers.
 
                         </p>
 
@@ -2097,82 +1196,66 @@
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
 
-        <!-- ==================================================
-             ARC
-        ================================================== -->
+    <!-- =========================================================
+         ARC
+    ========================================================== -->
 
-        <section id="arc">
+    <section id="arc">
 
-            <div class="section-number">
-                04 / 06
-            </div>
+        <div class="section-inner">
 
+            <div class="scroll-content">
 
-            <div class="content scroll-content">
-
-                <div class="eyebrow">
-
-                    THE STORY
-
-                </div>
-
-
-                <h2>
-
-                    ARCS
-
+                <h2 class="section-title">
+                    ARC
                 </h2>
 
+                <p class="section-description">
 
-                <div class="arc-description">
+                    The story of ReAwakening is divided
+                    into seven major Arcs.
 
-                    <p>
+                    <br>
 
-                        The story of ReAwakening is divided
-                        into seven major arcs.
+                    Each Arc contains seven Chapters.
 
-                        <br>
-
-                        Each arc contains seven chapters.
-
-                    </p>
-
-                </div>
+                </p>
 
 
                 <div class="arc-grid">
 
 
-                    <!-- ==============================
-                         ARC 01
-                    ============================== -->
+                    <!-- ARC 01 -->
 
                     <div
                         class="arc-card arc-1"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 01
-                        </div>
+                        <div class="arc-header">
 
+                            <div>
 
-                        <div class="arc-title">
-                            THE BEGINNING
-                        </div>
+                                <div class="arc-number">
+                                    ARC 01
+                                </div>
 
+                                <div class="arc-name">
+                                    THE BEGINNING
+                                </div>
 
-                        <div class="arc-name">
-                            THE FIRST MEMORY
-                        </div>
+                            </div>
 
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
 
-                        <div class="arc-arrow">
-                            ↓
                         </div>
 
 
@@ -2180,131 +1263,83 @@
 
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 01
+                                </span>
 
-                                    <span class="chapter-number">
-                                        01
-                                    </span>
-
-                                    Chapter One
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
                             </div>
 
-
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 02
+                                </span>
 
-                                    <span class="chapter-number">
-                                        02
-                                    </span>
-
-                                    Chapter Two
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
                             </div>
 
-
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 03
+                                </span>
 
-                                    <span class="chapter-number">
-                                        03
-                                    </span>
-
-                                    Chapter Three
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
                             </div>
 
-
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 04
+                                </span>
 
-                                    <span class="chapter-number">
-                                        04
-                                    </span>
-
-                                    Chapter Four
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
                             </div>
 
-
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 05
+                                </span>
 
-                                    <span class="chapter-number">
-                                        05
-                                    </span>
-
-                                    Chapter Five
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
                             </div>
 
-
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 06
+                                </span>
 
-                                    <span class="chapter-number">
-                                        06
-                                    </span>
-
-                                    Chapter Six
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
                             </div>
 
-
                             <div class="chapter">
 
-                                <div class="chapter-left">
+                                <span class="chapter-number">
+                                    Chapter 07
+                                </span>
 
-                                    <span class="chapter-number">
-                                        07
-                                    </span>
-
-                                    Chapter Seven
-
-                                </div>
-
-                                <span class="lock">
+                                <span>
                                     🔒
                                 </span>
 
@@ -2316,88 +1351,65 @@
 
 
 
-                    <!-- ==============================
-                         ARC 02
-                    ============================== -->
+                    <!-- ARC 02 -->
 
                     <div
                         class="arc-card arc-2"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 02
-                        </div>
+                        <div class="arc-header">
 
-                        <div class="arc-title">
-                            THE AWAKENING
-                        </div>
+                            <div>
 
-                        <div class="arc-name">
-                            UNKNOWN POWERS
-                        </div>
+                                <div class="arc-number">
+                                    ARC 02
+                                </div>
 
-                        <div class="arc-arrow">
-                            ↓
+                            </div>
+
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
+
                         </div>
 
 
                         <div class="chapter-list">
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">01</span>
-                                    Chapter One
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 01</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">02</span>
-                                    Chapter Two
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 02</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">03</span>
-                                    Chapter Three
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 03</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">04</span>
-                                    Chapter Four
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 04</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">05</span>
-                                    Chapter Five
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 05</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">06</span>
-                                    Chapter Six
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 06</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">07</span>
-                                    Chapter Seven
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 07</span>
+                                <span>🔒</span>
                             </div>
 
                         </div>
@@ -2406,88 +1418,65 @@
 
 
 
-                    <!-- ==============================
-                         ARC 03
-                    ============================== -->
+                    <!-- ARC 03 -->
 
                     <div
                         class="arc-card arc-3"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 03
-                        </div>
+                        <div class="arc-header">
 
-                        <div class="arc-title">
-                            THE CONFLICT
-                        </div>
+                            <div>
 
-                        <div class="arc-name">
-                            TWO SIDES
-                        </div>
+                                <div class="arc-number">
+                                    ARC 03
+                                </div>
 
-                        <div class="arc-arrow">
-                            ↓
+                            </div>
+
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
+
                         </div>
 
 
                         <div class="chapter-list">
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">01</span>
-                                    Chapter One
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 01</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">02</span>
-                                    Chapter Two
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 02</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">03</span>
-                                    Chapter Three
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 03</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">04</span>
-                                    Chapter Four
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 04</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">05</span>
-                                    Chapter Five
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 05</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">06</span>
-                                    Chapter Six
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 06</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">07</span>
-                                    Chapter Seven
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 07</span>
+                                <span>🔒</span>
                             </div>
 
                         </div>
@@ -2496,88 +1485,65 @@
 
 
 
-                    <!-- ==============================
-                         ARC 04
-                    ============================== -->
+                    <!-- ARC 04 -->
 
                     <div
                         class="arc-card arc-4"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 04
-                        </div>
+                        <div class="arc-header">
 
-                        <div class="arc-title">
-                            THE TRUTH
-                        </div>
+                            <div>
 
-                        <div class="arc-name">
-                            WHAT REALLY HAPPENED
-                        </div>
+                                <div class="arc-number">
+                                    ARC 04
+                                </div>
 
-                        <div class="arc-arrow">
-                            ↓
+                            </div>
+
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
+
                         </div>
 
 
                         <div class="chapter-list">
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">01</span>
-                                    Chapter One
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 01</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">02</span>
-                                    Chapter Two
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 02</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">03</span>
-                                    Chapter Three
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 03</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">04</span>
-                                    Chapter Four
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 04</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">05</span>
-                                    Chapter Five
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 05</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">06</span>
-                                    Chapter Six
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 06</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">07</span>
-                                    Chapter Seven
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 07</span>
+                                <span>🔒</span>
                             </div>
 
                         </div>
@@ -2586,88 +1552,65 @@
 
 
 
-                    <!-- ==============================
-                         ARC 05
-                    ============================== -->
+                    <!-- ARC 05 -->
 
                     <div
                         class="arc-card arc-5"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 05
-                        </div>
+                        <div class="arc-header">
 
-                        <div class="arc-title">
-                            THE FALL
-                        </div>
+                            <div>
 
-                        <div class="arc-name">
-                            BROKEN MEMORIES
-                        </div>
+                                <div class="arc-number">
+                                    ARC 05
+                                </div>
 
-                        <div class="arc-arrow">
-                            ↓
+                            </div>
+
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
+
                         </div>
 
 
                         <div class="chapter-list">
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">01</span>
-                                    Chapter One
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 01</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">02</span>
-                                    Chapter Two
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 02</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">03</span>
-                                    Chapter Three
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 03</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">04</span>
-                                    Chapter Four
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 04</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">05</span>
-                                    Chapter Five
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 05</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">06</span>
-                                    Chapter Six
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 06</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">07</span>
-                                    Chapter Seven
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 07</span>
+                                <span>🔒</span>
                             </div>
 
                         </div>
@@ -2676,88 +1619,65 @@
 
 
 
-                    <!-- ==============================
-                         ARC 06
-                    ============================== -->
+                    <!-- ARC 06 -->
 
                     <div
                         class="arc-card arc-6"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 06
-                        </div>
+                        <div class="arc-header">
 
-                        <div class="arc-title">
-                            REVELATION
-                        </div>
+                            <div>
 
-                        <div class="arc-name">
-                            THE LOST PAST
-                        </div>
+                                <div class="arc-number">
+                                    ARC 06
+                                </div>
 
-                        <div class="arc-arrow">
-                            ↓
+                            </div>
+
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
+
                         </div>
 
 
                         <div class="chapter-list">
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">01</span>
-                                    Chapter One
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 01</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">02</span>
-                                    Chapter Two
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 02</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">03</span>
-                                    Chapter Three
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 03</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">04</span>
-                                    Chapter Four
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 04</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">05</span>
-                                    Chapter Five
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 05</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">06</span>
-                                    Chapter Six
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 06</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">07</span>
-                                    Chapter Seven
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 07</span>
+                                <span>🔒</span>
                             </div>
 
                         </div>
@@ -2766,88 +1686,65 @@
 
 
 
-                    <!-- ==============================
-                         ARC 07
-                    ============================== -->
+                    <!-- ARC 07 -->
 
                     <div
                         class="arc-card arc-7"
                         onclick="toggleArc(this)"
                     >
 
-                        <div class="arc-number">
-                            ARC 07
-                        </div>
+                        <div class="arc-header">
 
-                        <div class="arc-title">
-                            REAWAKENING
-                        </div>
+                            <div>
 
-                        <div class="arc-name">
-                            THE FINAL MEMORY
-                        </div>
+                                <div class="arc-number">
+                                    ARC 07
+                                </div>
 
-                        <div class="arc-arrow">
-                            ↓
+                            </div>
+
+                            <div class="arc-arrow">
+                                ▼
+                            </div>
+
                         </div>
 
 
                         <div class="chapter-list">
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">01</span>
-                                    Chapter One
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 01</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">02</span>
-                                    Chapter Two
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 02</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">03</span>
-                                    Chapter Three
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 03</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">04</span>
-                                    Chapter Four
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 04</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">05</span>
-                                    Chapter Five
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 05</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">06</span>
-                                    Chapter Six
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 06</span>
+                                <span>🔒</span>
                             </div>
 
                             <div class="chapter">
-                                <div class="chapter-left">
-                                    <span class="chapter-number">07</span>
-                                    Chapter Seven
-                                </div>
-                                <span class="lock">🔒</span>
+                                <span class="chapter-number">Chapter 07</span>
+                                <span>🔒</span>
                             </div>
 
                         </div>
@@ -2859,234 +1756,159 @@
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
 
-        <!-- ==================================================
-             GAMEPLAY
-        ================================================== -->
+    <!-- =========================================================
+         GAMEPLAY
+    ========================================================== -->
 
-        <section id="gameplay">
+    <section id="gameplay">
 
-            <div class="section-number">
-                05 / 06
-            </div>
+        <div class="section-inner">
 
+            <div class="scroll-content">
 
-            <div class="content scroll-content">
-
-                <div class="eyebrow">
-
-                    YOUR JOURNEY BEGINS
-
-                </div>
-
-
-                <h2>
-
+                <h2 class="section-title">
                     GAMEPLAY
-
                 </h2>
 
+                <p class="section-description">
 
-                <div class="gameplay-intro">
+                    Explore the world,
+                    discover its mysteries,
+                    and experience Aster's journey.
+
+                </p>
+
+
+                <div class="gameplay-box">
+
+                    <h3>
+                        STORY • EXPLORATION • COMBAT
+                    </h3>
 
                     <p>
 
-                        Explore the world, uncover forgotten
-                        memories and discover the truth behind
-                        the conflict between Humans and the
-                        Awakened.
+                        ReAwakening combines a story-driven
+                        adventure with exploration,
+                        character interactions,
+                        mysterious abilities,
+                        and battles.
+
+                        <br><br>
+
+                        More gameplay details will be revealed
+                        as development continues.
 
                     </p>
 
                 </div>
 
-
-                <div class="features">
-
-
-                    <div class="feature">
-
-                        <div class="feature-number">
-                            01
-                        </div>
-
-                        <h3>
-                            STORY
-                        </h3>
-
-                        <p>
-
-                            Experience a story-driven adventure
-                            where every character has their own
-                            memories, secrets and motives.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <div class="feature-number">
-                            02
-                        </div>
-
-                        <h3>
-                            EXPLORATION
-                        </h3>
-
-                        <p>
-
-                            Explore different locations and
-                            discover pieces of a forgotten past.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <div class="feature-number">
-                            03
-                        </div>
-
-                        <h3>
-                            COMBAT
-                        </h3>
-
-                        <p>
-
-                            Fight enemies using unique abilities,
-                            strategies and supernatural powers.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="feature">
-
-                        <div class="feature-number">
-                            04
-                        </div>
-
-                        <h3>
-                            MEMORIES
-                        </h3>
-
-                        <p>
-
-                            Recover lost memories and uncover
-                            the truth hidden inside them.
-
-                        </p>
-
-                    </div>
-
-
-                </div>
-
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
 
-        <!-- ==================================================
-             RELEASE DAY
-        ================================================== -->
+    <!-- =========================================================
+         RELEASE DAY
+    ========================================================== -->
 
-        <section id="release">
+    <section id="release">
 
-            <div class="section-number">
-                06 / 06
-            </div>
+        <div class="section-inner">
 
+            <div class="scroll-content">
 
-            <div class="dot dot-two"></div>
+                <h2 class="section-title">
+                    RELEASE DAY
+                </h2>
 
-
-            <div class="content scroll-content">
-
-                <div class="release-label">
-
-                    ESTIMATED RELEASE
-
+                <div class="release-title">
+                    TBA
                 </div>
 
+                <p class="release-text">
 
-                <div class="release-year">
-
-                    2027
-
-                </div>
-
-
-                <div class="status">
-
-                    STATUS: IN DEVELOPMENT
-
-                </div>
-
-
-                <p class="release-message">
-
-                    ReAwakening is still being developed.
-
-                    <br><br>
-
-                    The world is growing.
-                    The story is taking shape.
-                    And there are still many memories
-                    waiting to be uncovered.
+                    The release date will be announced
+                    when the game is ready.
 
                 </p>
 
 
-                <div class="final-line">
+                <!-- =================================================
+                     CREDITS
+                ================================================== -->
 
-                    Don't forget who you are.
+                <div class="credits">
+
+                    <h3>
+                        CREDITS
+                    </h3>
+
+                    <div class="credit-line">
+                        THE OWNER:
+                        <span>
+                            Y & Mr. P
+                        </span>
+                    </div>
+
+                    <div class="credit-line">
+                        ART:
+                        <span>
+                            Y & NutellaGuy
+                        </span>
+                    </div>
+
+                    <div class="credit-line">
+                        MUSIC:
+                        <span>
+                            Y
+                        </span>
+                    </div>
+
+                    <div class="credit-line">
+                        CODING:
+                        <span>
+                            Mr. P, 5G & Y
+                        </span>
+                    </div>
+
+
+                    <div class="final-message">
+
+                        “A game made by young creators,
+                        aged 12–13, with nothing but passion
+                        and imagination.”
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-
-    </main>
-
-
-
-    <!-- ==================================================
-         FOOTER
-    ================================================== -->
-
-    <footer>
-
-        ReAwakening
-
-        <br><br>
-
-        MADE WITH MEMORY & IMAGINATION
-
-    </footer>
+    </section>
 
 
 
-    <!-- ==================================================
+    <!-- =========================================================
          JAVASCRIPT
-    ================================================== -->
+    ========================================================== -->
 
     <script>
 
-        /* ==================================================
-           ARC SYSTEM
-        ================================================== */
+
+        /* =========================================================
+           ARC OPEN / CLOSE
+        ========================================================== */
 
         function toggleArc(selectedArc) {
 
@@ -3111,14 +1933,12 @@
 
 
 
-        /* ==================================================
-           SCROLL FADE SYSTEM
-        ================================================== */
+        /* =========================================================
+           SCROLL FADE EFFECT
+        ========================================================== */
 
         const contents =
-            document.querySelectorAll(
-                ".scroll-content"
-            );
+            document.querySelectorAll(".scroll-content");
 
 
         function updateScroll() {
@@ -3134,14 +1954,12 @@
 
 
                 const elementCenter =
-                    rect.top +
-                    rect.height / 2;
+                    rect.top + rect.height / 2;
 
 
                 const distance =
                     Math.abs(
-                        viewportCenter -
-                        elementCenter
+                        viewportCenter - elementCenter
                     );
 
 
@@ -3150,23 +1968,18 @@
 
 
                 let opacity =
-                    1 -
-                    distance / fadeRange;
+                    1 - distance / fadeRange;
 
 
                 opacity =
                     Math.max(
                         0,
-                        Math.min(
-                            1,
-                            opacity
-                        )
+                        Math.min(1, opacity)
                     );
 
 
                 const movement =
-                    60 *
-                    (1 - opacity);
+                    60 * (1 - opacity);
 
 
                 content.style.opacity =
@@ -3184,9 +1997,7 @@
         window.addEventListener(
             "scroll",
             updateScroll,
-            {
-                passive: true
-            }
+            { passive: true }
         );
 
 
@@ -3198,9 +2009,9 @@
 
         updateScroll();
 
+
     </script>
 
 
 </body>
-
 </html>
