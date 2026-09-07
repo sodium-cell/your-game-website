@@ -5,16 +5,19 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>ReAwakening</title>
 
 
     <style>
 
-        /* ========================================
+        /* ==================================================
            RESET
-        ======================================== */
+        ================================================== */
 
         * {
             margin: 0;
@@ -33,11 +36,11 @@
                 "Times New Roman",
                 serif;
 
-            color: #fff;
-
-            overflow-x: hidden;
+            color: #ffffff;
 
             background: #17152A;
+
+            overflow-x: hidden;
         }
 
         a {
@@ -46,9 +49,9 @@
         }
 
 
-        /* ========================================
-           NAVBAR
-        ======================================== */
+        /* ==================================================
+           NAVIGATION
+        ================================================== */
 
         nav {
 
@@ -65,32 +68,37 @@
             justify-content: center;
             align-items: center;
 
-            gap: 40px;
+            gap: 34px;
 
             background:
-                rgba(20, 18, 40, 0.72);
+                rgba(18, 16, 36, 0.80);
 
-            backdrop-filter: blur(14px);
+            backdrop-filter:
+                blur(14px);
 
             border-bottom:
                 1px solid
-                rgba(255,255,255,0.15);
+                rgba(255,255,255,0.12);
 
             z-index: 1000;
         }
 
+
         nav a {
 
-            font-size: 12px;
+            font-size: 11px;
 
             font-weight: bold;
 
             letter-spacing: 2px;
 
-            color: rgba(255,255,255,0.8);
+            color:
+                rgba(255,255,255,0.78);
 
-            transition: 0.3s;
+            transition:
+                all 0.3s ease;
         }
+
 
         nav a:hover {
 
@@ -101,54 +109,55 @@
         }
 
 
-        /* ========================================
+        /* ==================================================
            SECTIONS
-        ======================================== */
+        ================================================== */
 
         section {
 
             min-height: 100vh;
 
             padding:
-                120px
-                8%
+                120px 6%
                 100px;
 
             display: flex;
 
-            align-items: center;
-
             justify-content: center;
+
+            align-items: center;
 
             position: relative;
 
-            overflow: hidden;
+            overflow: visible;
         }
 
 
-        /* ========================================
-           SECTION COLORS
-        ======================================== */
+        /* ==================================================
+           BACKGROUNDS
+        ================================================== */
 
         #welcome {
 
             background:
+
                 radial-gradient(
-                    circle at 20% 20%,
-                    rgba(118, 74, 255, 0.35),
-                    transparent 35%
+                    circle at 18% 25%,
+                    rgba(119,83,255,0.40),
+                    transparent 32%
                 ),
 
                 radial-gradient(
-                    circle at 80% 70%,
-                    rgba(0, 220, 255, 0.22),
-                    transparent 35%
+                    circle at 82% 70%,
+                    rgba(43,213,255,0.25),
+                    transparent 34%
                 ),
 
                 linear-gradient(
                     135deg,
                     #17152A,
-                    #211B42
+                    #241B4D,
+                    #162E4A
                 );
         }
 
@@ -156,16 +165,23 @@
         #about {
 
             background:
+
                 radial-gradient(
                     circle at 80% 20%,
-                    rgba(255, 91, 117, 0.25),
+                    rgba(255,81,137,0.28),
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(160,74,255,0.18),
                     transparent 35%
                 ),
 
                 linear-gradient(
                     135deg,
-                    #25182F,
-                    #301C3D
+                    #24172F,
+                    #351A3C
                 );
         }
 
@@ -173,16 +189,48 @@
         #lore {
 
             background:
+
                 radial-gradient(
-                    circle at 20% 70%,
-                    rgba(0, 220, 200, 0.22),
+                    circle at 18% 70%,
+                    rgba(0,231,211,0.24),
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 82% 25%,
+                    rgba(65,120,255,0.20),
                     transparent 35%
                 ),
 
                 linear-gradient(
                     135deg,
-                    #102B35,
-                    #152D46
+                    #102A35,
+                    #142C49
+                );
+        }
+
+
+        #arc {
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,80,100,0.15),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(130,90,255,0.18),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #171525,
+                    #241832,
+                    #17263A
                 );
         }
 
@@ -190,22 +238,23 @@
         #gameplay {
 
             background:
+
                 radial-gradient(
-                    circle at 80% 30%,
-                    rgba(255, 126, 45, 0.25),
-                    transparent 35%
+                    circle at 80% 25%,
+                    rgba(255,135,52,0.28),
+                    transparent 32%
                 ),
 
                 radial-gradient(
                     circle at 20% 80%,
-                    rgba(255, 218, 61, 0.15),
-                    transparent 35%
+                    rgba(255,216,67,0.18),
+                    transparent 32%
                 ),
 
                 linear-gradient(
                     135deg,
-                    #352016,
-                    #342719
+                    #352017,
+                    #3B2818
                 );
         }
 
@@ -213,23 +262,30 @@
         #release {
 
             background:
+
                 radial-gradient(
-                    circle at 50% 30%,
-                    rgba(164, 91, 255, 0.30),
+                    circle at 50% 25%,
+                    rgba(166,90,255,0.35),
                     transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 20% 75%,
+                    rgba(255,89,154,0.16),
+                    transparent 30%
                 ),
 
                 linear-gradient(
                     135deg,
-                    #21172F,
-                    #15152A
+                    #21162F,
+                    #14142A
                 );
         }
 
 
-        /* ========================================
+        /* ==================================================
            SECTION NUMBER
-        ======================================== */
+        ================================================== */
 
         .section-number {
 
@@ -244,21 +300,21 @@
             letter-spacing: 4px;
 
             color:
-                rgba(255,255,255,0.45);
+                rgba(255,255,255,0.42);
         }
 
 
-        /* ========================================
+        /* ==================================================
            CONTENT
-        ======================================== */
+        ================================================== */
 
         .content {
 
             width:
-                min(950px, 90%);
+                min(1100px, 94%);
 
             padding:
-                55px 65px;
+                60px 70px;
 
             background:
                 rgba(255,255,255,0.055);
@@ -267,22 +323,27 @@
                 1px solid
                 rgba(255,255,255,0.14);
 
+            border-radius:
+                8px;
+
             box-shadow:
                 0 25px 70px
-                rgba(0,0,0,0.25);
+                rgba(0,0,0,0.28);
 
             backdrop-filter:
                 blur(10px);
 
-            border-radius: 8px;
+            text-align:
+                center;
 
-            text-align: center;
+            position:
+                relative;
         }
 
 
-        /* ========================================
+        /* ==================================================
            SCROLL ANIMATION
-        ======================================== */
+        ================================================== */
 
         .scroll-content {
 
@@ -297,9 +358,9 @@
         }
 
 
-        /* ========================================
-           TEXT
-        ======================================== */
+        /* ==================================================
+           GENERAL TEXT
+        ================================================== */
 
         .eyebrow {
 
@@ -310,280 +371,372 @@
             font-weight: bold;
 
             color:
-                rgba(255,255,255,0.6);
+                rgba(255,255,255,0.58);
 
-            margin-bottom: 18px;
+            margin-bottom:
+                18px;
         }
+
 
         h1 {
 
             font-size:
-                clamp(60px, 10vw, 125px);
+                clamp(50px, 7.8vw, 110px);
 
-            line-height: 0.9;
+            line-height:
+                1;
 
-            letter-spacing: 6px;
+            letter-spacing:
+                4px;
 
-            margin-bottom: 20px;
+            margin-bottom:
+                22px;
+
+            white-space:
+                nowrap;
+
+            display:
+                inline-block;
 
             background:
+
                 linear-gradient(
                     90deg,
-                    #8B7CFF,
-                    #62E8FF,
-                    #FF79A8,
-                    #FFB84D
+                    #8175FF,
+                    #54DFFF,
+                    #A99BFF,
+                    #FF79AA,
+                    #FF9E5A,
+                    #FFD05A
                 );
 
-            -webkit-background-clip: text;
+            -webkit-background-clip:
+                text;
 
             -webkit-text-fill-color:
                 transparent;
 
-            background-clip: text;
+            background-clip:
+                text;
         }
+
 
         h2 {
 
             font-size:
                 clamp(40px, 6vw, 70px);
 
-            letter-spacing: 5px;
+            letter-spacing:
+                5px;
 
-            margin-bottom: 25px;
+            margin-bottom:
+                25px;
 
-            color: #ffffff;
+            color:
+                #ffffff;
         }
+
 
         h3 {
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            letter-spacing: 2px;
+            letter-spacing:
+                2px;
 
-            margin-bottom: 10px;
+            margin-bottom:
+                10px;
 
-            color: #ffffff;
+            color:
+                #ffffff;
         }
+
 
         p {
 
-            font-size: 15px;
+            font-size:
+                15px;
 
-            line-height: 1.8;
+            line-height:
+                1.8;
 
             color:
                 rgba(255,255,255,0.72);
         }
 
 
-        /* ========================================
+        /* ==================================================
            WELCOME
-        ======================================== */
+        ================================================== */
 
         #welcome .content {
 
-            background: transparent;
+            background:
+                transparent;
 
-            border: none;
+            border:
+                none;
 
-            box-shadow: none;
+            box-shadow:
+                none;
 
-            backdrop-filter: none;
+            backdrop-filter:
+                none;
+
+            max-width:
+                1150px;
         }
+
 
         .subtitle {
 
-            font-size: 19px;
+            font-size:
+                19px;
 
-            letter-spacing: 7px;
+            letter-spacing:
+                7px;
 
-            color: #62E8FF;
+            color:
+                #5DDEFF;
 
-            margin-bottom: 25px;
+            margin-bottom:
+                25px;
         }
+
 
         .welcome-line {
 
-            width: 150px;
+            width:
+                150px;
 
-            height: 2px;
+            height:
+                2px;
 
             margin:
                 30px auto;
 
             background:
+
                 linear-gradient(
                     90deg,
-                    #8B7CFF,
-                    #62E8FF,
-                    #FF79A8
+                    #8175FF,
+                    #5DDEFF,
+                    #FF79AA
                 );
         }
 
+
         .welcome-text {
 
-            font-size: 17px;
+            font-size:
+                17px;
 
-            line-height: 1.8;
+            line-height:
+                1.8;
 
             color:
-                rgba(255,255,255,0.8);
+                rgba(255,255,255,0.82);
         }
+
 
         .welcome-small {
 
-            margin-top: 25px;
+            margin-top:
+                25px;
 
-            font-size: 10px;
+            font-size:
+                10px;
 
-            letter-spacing: 4px;
+            letter-spacing:
+                4px;
 
             color:
                 rgba(255,255,255,0.45);
         }
 
+
         .enter-button {
 
-            display: inline-block;
+            display:
+                inline-block;
 
-            margin-top: 30px;
+            margin-top:
+                30px;
 
             padding:
                 15px 38px;
 
             border:
                 1px solid
-                rgba(98,232,255,0.7);
+                rgba(93,222,255,0.7);
 
-            border-radius: 3px;
+            border-radius:
+                3px;
 
-            font-size: 11px;
+            font-size:
+                11px;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            color: #62E8FF;
+            color:
+                #5DDEFF;
 
-            transition: 0.3s;
+            transition:
+                all 0.3s ease;
         }
+
 
         .enter-button:hover {
 
             background:
-                rgba(98,232,255,0.15);
+                rgba(93,222,255,0.12);
 
             border-color:
-                #62E8FF;
+                #5DDEFF;
+
+            color:
+                #ffffff;
 
             transform:
                 translateY(-4px);
 
             box-shadow:
                 0 0 25px
-                rgba(98,232,255,0.18);
+                rgba(93,222,255,0.2);
         }
 
 
-        /* ========================================
+        /* ==================================================
            DECORATIONS
-        ======================================== */
+        ================================================== */
 
         .decor-line {
 
-            position: absolute;
+            position:
+                absolute;
 
-            width: 1px;
+            width:
+                1px;
 
-            height: 130px;
+            height:
+                130px;
 
             background:
+
                 linear-gradient(
                     transparent,
-                    rgba(255,255,255,0.5),
+                    rgba(255,255,255,0.45),
                     transparent
                 );
         }
 
+
         .decor-left {
 
-            left: 8%;
+            left:
+                8%;
 
-            top: 30%;
+            top:
+                30%;
         }
+
 
         .decor-right {
 
-            right: 8%;
+            right:
+                8%;
 
-            bottom: 30%;
+            bottom:
+                30%;
         }
+
 
         .dot {
 
-            position: absolute;
+            position:
+                absolute;
 
-            width: 7px;
+            width:
+                7px;
 
-            height: 7px;
+            height:
+                7px;
 
-            border-radius: 50%;
-
-            opacity: 0.7;
+            border-radius:
+                50%;
         }
+
 
         .dot-one {
 
-            top: 25%;
+            top:
+                25%;
 
-            left: 14%;
+            left:
+                14%;
 
-            background: #62E8FF;
+            background:
+                #5DDEFF;
 
             box-shadow:
-                0 0 15px
-                #62E8FF;
+                0 0 18px
+                #5DDEFF;
         }
+
 
         .dot-two {
 
-            bottom: 20%;
+            bottom:
+                20%;
 
-            right: 14%;
+            right:
+                14%;
 
-            background: #FF79A8;
+            background:
+                #FF79AA;
 
             box-shadow:
-                0 0 15px
-                #FF79A8;
+                0 0 18px
+                #FF79AA;
         }
 
 
-        /* ========================================
-           ABOUT
-        ======================================== */
+        /* ==================================================
+           ABOUT US
+        ================================================== */
 
         .about-intro {
 
-            max-width: 700px;
+            max-width:
+                760px;
 
-            margin: auto;
+            margin:
+                auto;
         }
+
 
         .about-intro p {
 
-            margin-bottom: 18px;
+            margin-bottom:
+                18px;
         }
+
 
         .divider {
 
-            width: 100%;
+            width:
+                100%;
 
-            height: 1px;
+            height:
+                1px;
 
             margin:
                 35px 0;
 
             background:
+
                 linear-gradient(
                     90deg,
                     transparent,
@@ -593,25 +746,30 @@
         }
 
 
-        /* ========================================
+        /* ==================================================
            CREDITS
-        ======================================== */
+        ================================================== */
 
         .credits {
 
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2,1fr);
 
-            gap: 15px;
+            gap:
+                15px;
 
-            text-align: left;
+            text-align:
+                left;
         }
+
 
         .credit-card {
 
-            padding: 22px;
+            padding:
+                22px;
 
             background:
                 rgba(255,255,255,0.05);
@@ -620,10 +778,13 @@
                 1px solid
                 rgba(255,255,255,0.12);
 
-            border-radius: 5px;
+            border-radius:
+                5px;
 
-            transition: 0.3s;
+            transition:
+                all 0.3s ease;
         }
+
 
         .credit-card:hover {
 
@@ -634,68 +795,87 @@
                 rgba(255,255,255,0.09);
         }
 
+
         .credit-title {
 
-            font-size: 10px;
+            font-size:
+                10px;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
             color:
                 rgba(255,255,255,0.45);
 
-            margin-bottom: 8px;
+            margin-bottom:
+                8px;
         }
+
 
         .credit-name {
 
-            font-size: 15px;
+            font-size:
+                15px;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            color: #ffffff;
+            color:
+                #ffffff;
         }
 
 
-        /* ========================================
+        /* ==================================================
            LORE
-        ======================================== */
+        ================================================== */
 
         .lore-main {
 
-            text-align: left;
+            max-width:
+                780px;
 
-            max-width: 750px;
+            margin:
+                auto;
 
-            margin: auto;
+            text-align:
+                left;
         }
+
 
         .lore-main p {
 
-            margin-bottom: 20px;
+            margin-bottom:
+                20px;
         }
 
 
-        /* ========================================
+        /* ==================================================
            FACTIONS
-        ======================================== */
+        ================================================== */
 
         .factions {
 
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2,1fr);
 
-            gap: 18px;
+            gap:
+                18px;
 
-            margin-top: 25px;
+            margin-top:
+                25px;
         }
+
 
         .faction {
 
-            padding: 28px;
+            padding:
+                28px;
 
-            text-align: left;
+            text-align:
+                left;
 
             background:
                 rgba(255,255,255,0.05);
@@ -704,117 +884,469 @@
                 1px solid
                 rgba(255,255,255,0.13);
 
-            border-radius: 5px;
+            border-radius:
+                5px;
 
-            transition: 0.3s;
+            transition:
+                all 0.3s ease;
         }
+
 
         .faction:hover {
 
             transform:
                 translateY(-5px);
+
+            background:
+                rgba(255,255,255,0.08);
         }
+
 
         .faction:first-child {
 
             border-top:
-                2px solid #62E8FF;
+                2px solid
+                #5DDEFF;
         }
+
 
         .faction:last-child {
 
             border-top:
-                2px solid #FF5C77;
+                2px solid
+                #FF5D78;
         }
+
 
         .faction-symbol {
 
-            font-size: 27px;
+            font-size:
+                27px;
 
-            margin-bottom: 12px;
+            margin-bottom:
+                12px;
         }
+
 
         .faction:first-child
         .faction-symbol {
 
-            color: #62E8FF;
+            color:
+                #5DDEFF;
         }
+
 
         .faction:last-child
         .faction-symbol {
 
-            color: #FF5C77;
+            color:
+                #FF5D78;
         }
+
 
         .faction h3 {
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            font-size: 17px;
+            font-size:
+                17px;
         }
+
 
         .faction p {
 
-            font-size: 13px;
+            font-size:
+                13px;
 
-            line-height: 1.7;
+            line-height:
+                1.7;
         }
 
 
-        /* ========================================
+        /* ==================================================
+           ARC SECTION
+        ================================================== */
+
+        .arc-description {
+
+            max-width:
+                700px;
+
+            margin:
+                0 auto 35px;
+        }
+
+
+        .arc-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                18px;
+
+            text-align:
+                left;
+        }
+
+
+        /* ==================================================
+           ARC CARD
+        ================================================== */
+
+        .arc-card {
+
+            position:
+                relative;
+
+            padding:
+                30px 25px;
+
+            min-height:
+                150px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.14);
+
+            border-radius:
+                7px;
+
+            cursor:
+                pointer;
+
+            transition:
+                all 0.35s ease;
+
+            overflow:
+                hidden;
+        }
+
+
+        .arc-card::before {
+
+            content: "";
+
+            position:
+                absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background:
+                var(--arc-color);
+        }
+
+
+        .arc-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border-color:
+                var(--arc-color);
+
+            box-shadow:
+                0 12px 30px
+                rgba(0,0,0,0.2);
+        }
+
+
+        .arc-number {
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                4px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .arc-title {
+
+            font-size:
+                25px;
+
+            letter-spacing:
+                3px;
+
+            color:
+                var(--arc-color);
+
+            margin-bottom:
+                8px;
+        }
+
+
+        .arc-name {
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                2px;
+
+            color:
+                rgba(255,255,255,0.65);
+        }
+
+
+        .arc-arrow {
+
+            position:
+                absolute;
+
+            right:
+                22px;
+
+            bottom:
+                22px;
+
+            font-size:
+                18px;
+
+            color:
+                rgba(255,255,255,0.4);
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .arc-card.active
+        .arc-arrow {
+
+            transform:
+                rotate(180deg);
+
+            color:
+                var(--arc-color);
+        }
+
+
+        /* ==================================================
+           CHAPTER LIST
+        ================================================== */
+
+        .chapter-list {
+
+            max-height:
+                0;
+
+            overflow:
+                hidden;
+
+            opacity:
+                0;
+
+            margin-top:
+                0;
+
+            transition:
+                max-height 0.45s ease,
+                opacity 0.35s ease,
+                margin 0.35s ease;
+        }
+
+
+        .arc-card.active
+        .chapter-list {
+
+            max-height:
+                500px;
+
+            opacity:
+                1;
+
+            margin-top:
+                25px;
+        }
+
+
+        .chapter {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            padding:
+                13px 0;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                1px;
+
+            color:
+                rgba(255,255,255,0.58);
+        }
+
+
+        .chapter-left {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+        }
+
+
+        .chapter-number {
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                2px;
+
+            color:
+                rgba(255,255,255,0.35);
+        }
+
+
+        .lock {
+
+            font-size:
+                14px;
+
+            filter:
+                grayscale(0.2);
+        }
+
+
+        /* ==================================================
+           ARC COLORS
+        ================================================== */
+
+        .arc-1 {
+            --arc-color: #FF5364;
+        }
+
+        .arc-2 {
+            --arc-color: #5DDEFF;
+        }
+
+        .arc-3 {
+            --arc-color: #FF9B45;
+        }
+
+        .arc-4 {
+            --arc-color: #668CFF;
+        }
+
+        .arc-5 {
+            --arc-color: #A77CFF;
+        }
+
+        .arc-6 {
+            --arc-color: #65D99B;
+        }
+
+        .arc-7 {
+            --arc-color: #FFD75A;
+        }
+
+
+        /* ==================================================
            GAMEPLAY
-        ======================================== */
+        ================================================== */
 
         .gameplay-intro {
 
-            max-width: 700px;
+            max-width:
+                720px;
 
             margin:
                 auto auto 35px;
         }
 
+
         .features {
 
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
-                repeat(2, 1fr);
+                repeat(2,1fr);
 
-            gap: 15px;
+            gap:
+                15px;
 
-            text-align: left;
+            text-align:
+                left;
         }
+
 
         .feature {
 
-            padding: 25px;
+            padding:
+                25px;
 
             background:
                 rgba(255,255,255,0.05);
 
             border-left:
-                3px solid #FF9B45;
+                3px solid
+                #FF9B45;
 
-            transition: 0.3s;
+            transition:
+                all 0.3s ease;
         }
+
 
         .feature:nth-child(2) {
 
             border-left-color:
-                #62E8FF;
+                #5DDEFF;
         }
+
 
         .feature:nth-child(3) {
 
             border-left-color:
-                #FF5C77;
+                #FF5D78;
         }
+
 
         .feature:nth-child(4) {
 
             border-left-color:
                 #A77CFF;
         }
+
 
         .feature:hover {
 
@@ -825,89 +1357,117 @@
                 rgba(255,255,255,0.09);
         }
 
+
         .feature-number {
 
-            font-size: 10px;
+            font-size:
+                10px;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            opacity: 0.5;
+            opacity:
+                0.5;
 
-            margin-bottom: 10px;
+            margin-bottom:
+                10px;
         }
+
 
         .feature h3 {
 
-            font-size: 16px;
+            font-size:
+                16px;
 
-            letter-spacing: 2px;
+            letter-spacing:
+                2px;
         }
+
 
         .feature p {
 
-            font-size: 13px;
+            font-size:
+                13px;
 
-            line-height: 1.7;
+            line-height:
+                1.7;
         }
 
 
-        /* ========================================
+        /* ==================================================
            RELEASE
-        ======================================== */
+        ================================================== */
 
         #release .content {
 
-            background: transparent;
+            background:
+                transparent;
 
-            border: none;
+            border:
+                none;
 
-            box-shadow: none;
+            box-shadow:
+                none;
 
-            backdrop-filter: none;
+            backdrop-filter:
+                none;
         }
+
 
         .release-label {
 
-            font-size: 11px;
+            font-size:
+                11px;
 
-            letter-spacing: 5px;
+            letter-spacing:
+                5px;
 
             color:
                 rgba(255,255,255,0.55);
 
-            margin-bottom: 20px;
+            margin-bottom:
+                20px;
         }
+
 
         .release-year {
 
             font-size:
-                clamp(80px, 17vw, 180px);
+                clamp(80px,16vw,175px);
 
-            line-height: 0.9;
+            line-height:
+                0.9;
 
-            letter-spacing: 12px;
+            letter-spacing:
+                10px;
 
             background:
+
                 linear-gradient(
                     90deg,
-                    #FF79A8,
+                    #FF79AA,
                     #A77CFF,
-                    #62E8FF
+                    #5DDEFF
                 );
 
-            -webkit-background-clip: text;
+            -webkit-background-clip:
+                text;
 
             -webkit-text-fill-color:
                 transparent;
 
-            background-clip: text;
+            background-clip:
+                text;
 
-            margin-bottom: 30px;
+            margin-bottom:
+                30px;
         }
+
 
         .status {
 
-            display: inline-block;
+            display:
+                inline-block;
 
             padding:
                 10px 20px;
@@ -916,140 +1476,243 @@
                 1px solid
                 #A77CFF;
 
-            color: #C8B7FF;
+            color:
+                #C9B8FF;
 
-            font-size: 10px;
+            font-size:
+                10px;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
-            margin-bottom: 30px;
-
-            box-shadow:
-                0 0 20px
-                rgba(167,124,255,0.1);
+            margin-bottom:
+                30px;
         }
+
 
         .release-message {
 
-            max-width: 650px;
+            max-width:
+                650px;
 
-            margin: auto;
+            margin:
+                auto;
         }
+
 
         .final-line {
 
-            margin-top: 30px;
+            margin-top:
+                30px;
 
-            font-size: 18px;
+            font-size:
+                18px;
 
-            letter-spacing: 2px;
+            letter-spacing:
+                2px;
 
-            color: #FF79A8;
+            color:
+                #FF79AA;
         }
 
 
-        /* ========================================
+        /* ==================================================
            FOOTER
-        ======================================== */
+        ================================================== */
 
         footer {
 
             padding:
                 40px 20px;
 
-            text-align: center;
+            text-align:
+                center;
 
-            background: #11101F;
+            background:
+                #100F1E;
 
             border-top:
                 1px solid
                 rgba(255,255,255,0.12);
 
-            font-size: 10px;
+            font-size:
+                10px;
 
-            letter-spacing: 3px;
+            letter-spacing:
+                3px;
 
             color:
                 rgba(255,255,255,0.45);
         }
 
 
-        /* ========================================
-           MOBILE
-        ======================================== */
+        /* ==================================================
+           TABLET
+        ================================================== */
 
-        @media (max-width: 750px) {
+        @media (max-width: 950px) {
 
             nav {
 
-                height: 60px;
-
-                gap: 14px;
+                gap:
+                    22px;
             }
+
+
+            .content {
+
+                width:
+                    96%;
+
+                padding:
+                    50px 45px;
+            }
+
+
+            .arc-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+
+            h1 {
+
+                font-size:
+                    clamp(45px,8vw,80px);
+            }
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                height:
+                    60px;
+
+                gap:
+                    10px;
+
+                padding:
+                    0 10px;
+            }
+
 
             nav a {
 
-                font-size: 8px;
+                font-size:
+                    7px;
 
-                letter-spacing: 1px;
+                letter-spacing:
+                    1px;
             }
+
 
             section {
 
                 padding:
-                    100px
-                    25px
-                    70px;
+                    100px 20px 70px;
             }
+
 
             .content {
 
-                width: 100%;
+                width:
+                    100%;
 
                 padding:
-                    40px 25px;
+                    40px 22px;
             }
+
 
             .section-number {
 
-                top: 75px;
+                top:
+                    75px;
 
-                right: 25px;
+                right:
+                    20px;
             }
+
 
             h1 {
 
-                font-size: 48px;
+                font-size:
+                    43px;
+
+                letter-spacing:
+                    2px;
+
+                white-space:
+                    normal;
             }
+
 
             h2 {
 
-                font-size: 35px;
+                font-size:
+                    34px;
+
+                letter-spacing:
+                    3px;
             }
+
 
             .subtitle {
 
-                font-size: 13px;
+                font-size:
+                    12px;
 
-                letter-spacing: 3px;
+                letter-spacing:
+                    3px;
             }
 
-            .credits,
-            .factions,
-            .features {
-
-                grid-template-columns: 1fr;
-            }
 
             p {
 
-                font-size: 14px;
+                font-size:
+                    14px;
             }
+
+
+            .credits,
+            .factions,
+            .features,
+            .arc-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .arc-card {
+
+                min-height:
+                    140px;
+            }
+
 
             .decor-line,
             .dot {
 
-                display: none;
+                display:
+                    none;
+            }
+
+
+            .release-year {
+
+                font-size:
+                    90px;
+
+                letter-spacing:
+                    5px;
             }
 
         }
@@ -1062,9 +1725,9 @@
 <body>
 
 
-    <!-- ========================================
+    <!-- ==================================================
          NAVIGATION
-    ======================================== -->
+    ================================================== -->
 
     <nav>
 
@@ -1080,6 +1743,10 @@
             LORE
         </a>
 
+        <a href="#arc">
+            ARC
+        </a>
+
         <a href="#gameplay">
             GAMEPLAY
         </a>
@@ -1092,20 +1759,26 @@
 
 
 
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
     <main>
 
 
-        <!-- ========================================
+        <!-- ==================================================
              WELCOME
-        ======================================== -->
+        ================================================== -->
 
         <section id="welcome">
 
             <div class="section-number">
-                01 / 05
+                01 / 06
             </div>
 
+
             <div class="decor-line decor-left"></div>
+
 
             <div class="dot dot-one"></div>
 
@@ -1113,17 +1786,23 @@
             <div class="content scroll-content">
 
                 <div class="eyebrow">
+
                     A STORY-DRIVEN INDIE RPG
+
                 </div>
 
 
                 <h1>
+
                     ReAwakening
+
                 </h1>
 
 
                 <div class="subtitle">
+
                     SAVIOR OF MEMORIES
+
                 </div>
 
 
@@ -1161,26 +1840,30 @@
 
 
 
-        <!-- ========================================
+        <!-- ==================================================
              ABOUT US
-        ======================================== -->
+        ================================================== -->
 
         <section id="about">
 
             <div class="section-number">
-                02 / 05
+                02 / 06
             </div>
 
 
             <div class="content scroll-content">
 
                 <div class="eyebrow">
+
                     THE PEOPLE BEHIND THE WORLD
+
                 </div>
 
 
                 <h2>
+
                     ABOUT US
+
                 </h2>
 
 
@@ -1265,6 +1948,7 @@
 
                     </div>
 
+
                 </div>
 
 
@@ -1287,15 +1971,16 @@
 
 
 
-        <!-- ========================================
+        <!-- ==================================================
              LORE
-        ======================================== -->
+        ================================================== -->
 
         <section id="lore">
 
             <div class="section-number">
-                03 / 05
+                03 / 06
             </div>
+
 
             <div class="decor-line decor-right"></div>
 
@@ -1303,12 +1988,16 @@
             <div class="content scroll-content">
 
                 <div class="eyebrow">
+
                     THE WORLD OF REAWAKENING
+
                 </div>
 
 
                 <h2>
+
                     LORE
+
                 </h2>
 
 
@@ -1357,9 +2046,11 @@
                             ◇
                         </div>
 
+
                         <h3>
                             HUMANS
                         </h3>
+
 
                         <p>
 
@@ -1375,15 +2066,18 @@
                     </div>
 
 
+
                     <div class="faction">
 
                         <div class="faction-symbol">
                             ✦
                         </div>
 
+
                         <h3>
                             THE AWAKENED
                         </h3>
+
 
                         <p>
 
@@ -1407,26 +2101,792 @@
 
 
 
-        <!-- ========================================
-             GAMEPLAY
-        ======================================== -->
+        <!-- ==================================================
+             ARC
+        ================================================== -->
 
-        <section id="gameplay">
+        <section id="arc">
 
             <div class="section-number">
-                04 / 05
+                04 / 06
             </div>
 
 
             <div class="content scroll-content">
 
                 <div class="eyebrow">
-                    YOUR JOURNEY BEGINS
+
+                    THE STORY
+
                 </div>
 
 
                 <h2>
+
+                    ARCS
+
+                </h2>
+
+
+                <div class="arc-description">
+
+                    <p>
+
+                        The story of ReAwakening is divided
+                        into seven major arcs.
+
+                        <br>
+
+                        Each arc contains seven chapters.
+
+                    </p>
+
+                </div>
+
+
+                <div class="arc-grid">
+
+
+                    <!-- ==============================
+                         ARC 01
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-1"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 01
+                        </div>
+
+
+                        <div class="arc-title">
+                            THE BEGINNING
+                        </div>
+
+
+                        <div class="arc-name">
+                            THE FIRST MEMORY
+                        </div>
+
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        01
+                                    </span>
+
+                                    Chapter One
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        02
+                                    </span>
+
+                                    Chapter Two
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        03
+                                    </span>
+
+                                    Chapter Three
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        04
+                                    </span>
+
+                                    Chapter Four
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        05
+                                    </span>
+
+                                    Chapter Five
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        06
+                                    </span>
+
+                                    Chapter Six
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+
+                            <div class="chapter">
+
+                                <div class="chapter-left">
+
+                                    <span class="chapter-number">
+                                        07
+                                    </span>
+
+                                    Chapter Seven
+
+                                </div>
+
+                                <span class="lock">
+                                    🔒
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==============================
+                         ARC 02
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-2"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 02
+                        </div>
+
+                        <div class="arc-title">
+                            THE AWAKENING
+                        </div>
+
+                        <div class="arc-name">
+                            UNKNOWN POWERS
+                        </div>
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">01</span>
+                                    Chapter One
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">02</span>
+                                    Chapter Two
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">03</span>
+                                    Chapter Three
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">04</span>
+                                    Chapter Four
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">05</span>
+                                    Chapter Five
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">06</span>
+                                    Chapter Six
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">07</span>
+                                    Chapter Seven
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==============================
+                         ARC 03
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-3"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 03
+                        </div>
+
+                        <div class="arc-title">
+                            THE CONFLICT
+                        </div>
+
+                        <div class="arc-name">
+                            TWO SIDES
+                        </div>
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">01</span>
+                                    Chapter One
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">02</span>
+                                    Chapter Two
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">03</span>
+                                    Chapter Three
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">04</span>
+                                    Chapter Four
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">05</span>
+                                    Chapter Five
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">06</span>
+                                    Chapter Six
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">07</span>
+                                    Chapter Seven
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==============================
+                         ARC 04
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-4"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 04
+                        </div>
+
+                        <div class="arc-title">
+                            THE TRUTH
+                        </div>
+
+                        <div class="arc-name">
+                            WHAT REALLY HAPPENED
+                        </div>
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">01</span>
+                                    Chapter One
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">02</span>
+                                    Chapter Two
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">03</span>
+                                    Chapter Three
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">04</span>
+                                    Chapter Four
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">05</span>
+                                    Chapter Five
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">06</span>
+                                    Chapter Six
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">07</span>
+                                    Chapter Seven
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==============================
+                         ARC 05
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-5"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 05
+                        </div>
+
+                        <div class="arc-title">
+                            THE FALL
+                        </div>
+
+                        <div class="arc-name">
+                            BROKEN MEMORIES
+                        </div>
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">01</span>
+                                    Chapter One
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">02</span>
+                                    Chapter Two
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">03</span>
+                                    Chapter Three
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">04</span>
+                                    Chapter Four
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">05</span>
+                                    Chapter Five
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">06</span>
+                                    Chapter Six
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">07</span>
+                                    Chapter Seven
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==============================
+                         ARC 06
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-6"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 06
+                        </div>
+
+                        <div class="arc-title">
+                            REVELATION
+                        </div>
+
+                        <div class="arc-name">
+                            THE LOST PAST
+                        </div>
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">01</span>
+                                    Chapter One
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">02</span>
+                                    Chapter Two
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">03</span>
+                                    Chapter Three
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">04</span>
+                                    Chapter Four
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">05</span>
+                                    Chapter Five
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">06</span>
+                                    Chapter Six
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">07</span>
+                                    Chapter Seven
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==============================
+                         ARC 07
+                    ============================== -->
+
+                    <div
+                        class="arc-card arc-7"
+                        onclick="toggleArc(this)"
+                    >
+
+                        <div class="arc-number">
+                            ARC 07
+                        </div>
+
+                        <div class="arc-title">
+                            REAWAKENING
+                        </div>
+
+                        <div class="arc-name">
+                            THE FINAL MEMORY
+                        </div>
+
+                        <div class="arc-arrow">
+                            ↓
+                        </div>
+
+
+                        <div class="chapter-list">
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">01</span>
+                                    Chapter One
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">02</span>
+                                    Chapter Two
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">03</span>
+                                    Chapter Three
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">04</span>
+                                    Chapter Four
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">05</span>
+                                    Chapter Five
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">06</span>
+                                    Chapter Six
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                            <div class="chapter">
+                                <div class="chapter-left">
+                                    <span class="chapter-number">07</span>
+                                    Chapter Seven
+                                </div>
+                                <span class="lock">🔒</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             GAMEPLAY
+        ================================================== -->
+
+        <section id="gameplay">
+
+            <div class="section-number">
+                05 / 06
+            </div>
+
+
+            <div class="content scroll-content">
+
+                <div class="eyebrow">
+
+                    YOUR JOURNEY BEGINS
+
+                </div>
+
+
+                <h2>
+
                     GAMEPLAY
+
                 </h2>
 
 
@@ -1536,15 +2996,16 @@
 
 
 
-        <!-- ========================================
-             RELEASE
-        ======================================== -->
+        <!-- ==================================================
+             RELEASE DAY
+        ================================================== -->
 
         <section id="release">
 
             <div class="section-number">
-                05 / 05
+                06 / 06
             </div>
+
 
             <div class="dot dot-two"></div>
 
@@ -1552,17 +3013,23 @@
             <div class="content scroll-content">
 
                 <div class="release-label">
+
                     ESTIMATED RELEASE
+
                 </div>
 
 
                 <div class="release-year">
+
                     2027
+
                 </div>
 
 
                 <div class="status">
+
                     STATUS: IN DEVELOPMENT
+
                 </div>
 
 
@@ -1595,9 +3062,9 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          FOOTER
-    ======================================== -->
+    ================================================== -->
 
     <footer>
 
@@ -1611,11 +3078,42 @@
 
 
 
-    <!-- ========================================
+    <!-- ==================================================
          JAVASCRIPT
-    ======================================== -->
+    ================================================== -->
 
     <script>
+
+        /* ==================================================
+           ARC SYSTEM
+        ================================================== */
+
+        function toggleArc(selectedArc) {
+
+            const allArcs =
+                document.querySelectorAll(".arc-card");
+
+
+            allArcs.forEach(arc => {
+
+                if (arc !== selectedArc) {
+
+                    arc.classList.remove("active");
+
+                }
+
+            });
+
+
+            selectedArc.classList.toggle("active");
+
+        }
+
+
+
+        /* ==================================================
+           SCROLL FADE SYSTEM
+        ================================================== */
 
         const contents =
             document.querySelectorAll(
