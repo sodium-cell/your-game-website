@@ -283,6 +283,31 @@
         }
 
 
+        #social {
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 42%,
+                    rgba(130,96,255,0.34),
+                    transparent 34%
+                ),
+
+                radial-gradient(
+                    circle at 82% 72%,
+                    rgba(93,222,255,0.18),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #151329,
+                    #261B43,
+                    #142B3D
+                );
+        }
+
+
         /* ==================================================
            SECTION NUMBER
         ================================================== */
@@ -1517,6 +1542,93 @@
 
 
         /* ==================================================
+           SOCIAL MEDIA
+        ================================================== */
+
+        .social-intro {
+            max-width: 680px;
+            margin: 0 auto 38px;
+        }
+
+        .social-card {
+            width: min(560px, 100%);
+            margin: auto;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+            background: rgba(255,255,255,0.065);
+            border: 1px solid rgba(169,155,255,0.38);
+            border-radius: 8px;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.24);
+            transition: transform 0.35s ease,
+                        background 0.35s ease,
+                        border-color 0.35s ease,
+                        box-shadow 0.35s ease;
+        }
+
+        .social-card:hover,
+        .social-card:focus-visible {
+            transform: translateY(-7px);
+            background: rgba(255,255,255,0.11);
+            border-color: #5DDEFF;
+            box-shadow: 0 20px 55px rgba(0,0,0,0.28),
+                        0 0 34px rgba(93,222,255,0.16);
+            outline: none;
+        }
+
+        .social-icon {
+            width: 58px;
+            height: 58px;
+            flex: 0 0 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 7px;
+            background: linear-gradient(135deg,
+                        rgba(129,117,255,0.30),
+                        rgba(93,222,255,0.17));
+            border: 1px solid rgba(255,255,255,0.17);
+            font-family: Arial, sans-serif;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .social-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .social-platform {
+            margin-bottom: 6px;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.52);
+        }
+
+        .social-username {
+            overflow-wrap: anywhere;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .social-arrow {
+            font-size: 25px;
+            color: #5DDEFF;
+            transition: transform 0.3s ease;
+        }
+
+        .social-card:hover .social-arrow,
+        .social-card:focus-visible .social-arrow {
+            transform: translateX(7px);
+        }
+
+
+        /* ==================================================
            FOOTER
         ================================================== */
 
@@ -1601,6 +1713,12 @@
 
                 padding:
                     0 10px;
+
+                justify-content:
+                    flex-start;
+
+                overflow-x:
+                    auto;
             }
 
 
@@ -1715,6 +1833,21 @@
                     5px;
             }
 
+            .social-card {
+                padding: 20px 18px;
+                gap: 14px;
+            }
+
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                flex-basis: 50px;
+            }
+
+            .social-username {
+                font-size: 15px;
+            }
+
         }
 
     </style>
@@ -1751,6 +1884,10 @@
             GAMEPLAY
         </a>
 
+        <a href="#social">
+            SOCIAL
+        </a>
+
         <a href="#release">
             RELEASE DAY
         </a>
@@ -1773,7 +1910,7 @@
         <section id="welcome">
 
             <div class="section-number">
-                01 / 06
+                01 / 07
             </div>
 
 
@@ -1847,7 +1984,7 @@
         <section id="about">
 
             <div class="section-number">
-                02 / 06
+                02 / 07
             </div>
 
 
@@ -1978,7 +2115,7 @@
         <section id="lore">
 
             <div class="section-number">
-                03 / 06
+                03 / 07
             </div>
 
 
@@ -2108,7 +2245,7 @@
         <section id="arc">
 
             <div class="section-number">
-                04 / 06
+                04 / 07
             </div>
 
 
@@ -2870,7 +3007,7 @@
         <section id="gameplay">
 
             <div class="section-number">
-                05 / 06
+                05 / 07
             </div>
 
 
@@ -2997,13 +3134,74 @@
 
 
         <!-- ==================================================
+             SOCIAL MEDIA
+        ================================================== -->
+
+        <section id="social">
+
+            <div class="section-number">
+                06 / 07
+            </div>
+
+            <div class="decor-line decor-left"></div>
+            <div class="dot dot-one"></div>
+
+            <div class="content scroll-content">
+
+                <div class="eyebrow">
+                    STAY CONNECTED
+                </div>
+
+                <h2>
+                    SOCIAL MEDIA
+                </h2>
+
+                <p class="social-intro">
+                    Follow the journey of ReAwakening for the
+                    latest news, development progress, artwork
+                    and announcements from the world of memories.
+                </p>
+
+                <a
+                    class="social-card"
+                    href="https://x.com/SolarSystem_Dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow ReAwakening on X at SolarSystem Dev"
+                >
+                    <span class="social-icon" aria-hidden="true">
+                        X
+                    </span>
+
+                    <span class="social-info">
+                        <span class="social-platform">
+                            X / TWITTER
+                        </span>
+
+                        <span class="social-username">
+                            @SolarSystem_Dev
+                        </span>
+                    </span>
+
+                    <span class="social-arrow" aria-hidden="true">
+                        →
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
              RELEASE DAY
         ================================================== -->
 
         <section id="release">
 
             <div class="section-number">
-                06 / 06
+                07 / 07
             </div>
 
 
